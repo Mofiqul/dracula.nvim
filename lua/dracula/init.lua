@@ -294,16 +294,26 @@ M.apply = function()
 	highlight("TelescopePromptPrefix", colors.purple, nil, nil, nil)
 
 	-- NvimTree
-	highlight("NvimTreeRootFolder", colors.purple, nil, 'bold', nil)
-	highlight("NvimTreeNormal ", colors.bright_blue, nil, nil, nil)
+	highlight("NvimTreeRootFolder", colors.fg, nil, 'bold', nil)
+	highlight("NvimTreeNormal ", colors.fg, colors.menu, nil, nil)
 	highlight("NvimTreeGitDirty", colors.yellow, nil, nil, nil)
 	highlight("NvimTreeGitNew", colors.bright_green, nil, nil, nil)
 	highlight("NvimTreeImageFile", colors.pink, nil, nil, nil)
 	highlight("NvimTreeFolderIcon", colors.purple, nil, nil, nil)
 	highlight("NvimTreeIndentMarker", colors.nontext, nil, nil, nil)
 	highlight("NvimTreeEmptyFolderName", colors.comment, nil, nil, nil)
-	highlight("NvimTreeFolderName", colors.bright_blue, nil, nil, nil)
+	highlight("NvimTreeFolderName", colors.fg, nil, nil, nil)
 	highlight("NvimTreeSpecialFile", colors.pink, nil, 'underline', nil)
+	highlight("NvimTreeVertSplit", colors.menu, colors.menu, nil, nil)
+	highlight("NvimTreeOpenedFolderName", colors.fg, nil, nil, nil)
+	highlight("NvimTreeCursorLine", nil, colors.selection, nil, nil)
+	highlight("NvimTreeIn", nil, colors.selection, nil, nil)
+
+	if(vim.g.dracula_show_end_of_buffer == true) then
+		highlight("NvimTreeEndOfBuffer", colors.visual, nil, nil, nil)
+	else
+		highlight("NvimTreeEndOfBuffer", colors.bg, nil, nil, nil)
+	end
 
 	-- Bufferline
 	highlight("BufferLineIndicatorSelected", colors.purple , nil, nil, nil)
@@ -324,6 +334,7 @@ M.apply = function()
 	
 	-- Link highlights
 	vim.api.nvim_command("highlight! link CompeDocumentation Pmenu")
+	vim.api.nvim_command("highlight! link CompeDocumentationBorder Pmenu")
 
 end
 
