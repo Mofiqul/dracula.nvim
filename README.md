@@ -8,16 +8,20 @@
 
 ## ✔️ Requirements
 - Neovim >= 0.5.0
+- Treesitter (optional)
 
 ## #️ Supported Plugins
 - [LSP](https://github.com/neovim/nvim-lspconfig)
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-compe](https://github.com/hrsh7th/nvim-compe)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [BufferLine](https://github.com/akinsho/nvim-bufferline.lua)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
+- [LSPSaga](https://github.com/glepnir/lspsaga.nvim)
+- [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 
 ## ⬇️ Installation
 
@@ -59,4 +63,10 @@ require('lualine').setup {
 }'
 ```
 
+## 🎨 Importing colors for other usage
+```lua
+require('dracula').colors()
+```
+This will return the folowing table
 
+![colors](./assets/colors.png)
