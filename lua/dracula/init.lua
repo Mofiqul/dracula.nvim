@@ -350,6 +350,9 @@ M.apply = function()
 	highlight("LspSagaDocTruncateLine", colors.comment, nil, 'none', nil)
 	highlight("LspSagaRenameBorder", colors.comment, nil, 'none', nil)
 	highlight("LspSagaLspFinderBorder", colors.comment, nil, 'none', nil)
+
+	-- IndentBlankLine
+	highlight("IndentBlanklineContextChar", colors.bright_red, nil, "nocombine", nil)
 	
 	-- Link highlights
 	vim.api.nvim_command("highlight! link CompeDocumentation Pmenu")
