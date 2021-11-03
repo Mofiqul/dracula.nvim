@@ -41,12 +41,15 @@ Plug 'Mofiqul/dracula.nvim'
 ```lua
 -- Lua:
 vim.o.termguicolors = true
+
+vim.g.dracula_show_end_of_buffer = true  -- default false, Turn on or off EndOfBuffer symbol
 vim.cmd[[colorscheme dracula]]
 
 ```
 ```vim
 " Vim-Script:
 let g:termguicolors = true
+let g:dracula_show_end_of_buffer = true  " default false, Turn on or off EndOfBuffer symbol
 colorscheme dracula
 ```
 
