@@ -36,11 +36,13 @@ Plug 'Mofiqul/dracula.nvim'
 
 ```lua
 -- Lua:
+vim.o.termguicolors = true
 vim.cmd[[colorscheme dracula]]
 
 ```
 ```vim
 " Vim-Script:
+let g:termguicolors = true
 colorscheme dracula
 ```
 

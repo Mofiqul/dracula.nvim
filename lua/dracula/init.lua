@@ -94,8 +94,8 @@ M.apply = function()
 	highlight("StorageClass", colors.pink, nil, nil, nil)
 	highlight("Structure", colors.yellow, nil, nil, nil)
 	highlight("TypeDef", colors.yellow, nil, nil, nil)
-	highlight("Special", colors.green, nil, nil, nil)
-	highlight("SpecialComment", colors.comment, nil, nil, nil)
+	highlight("Special", colors.green, nil, "italic", nil)
+	highlight("SpecialComment", colors.comment, nil, "italic", nil)
 	highlight("Error", colors.bright_red, nil, nil, nil)
 	highlight("Todo", colors.purple, nil, "bold,italic", nil)
 	highlight("Underlined", colors.cyan, nil, "underline", nil)
@@ -150,7 +150,12 @@ M.apply = function()
 	highlight("VisualNOS", colors.visual, nil, nil, nil)
 	highlight("WarningMsg", colors.yellow, nil, nil, nil)
 	highlight("WildMenu", colors.black, colors.white, nil, nil)
-	highlight("EndOfBuffer", colors.bg, nil, nil, nil)
+	
+	if(vim.g.dracula_show_end_of_buffer == true) then
+		highlight("EndOfBuffer", colors.visual, nil, nil, nil)
+	else
+		highlight("EndOfBuffer", colors.bg, nil, nil, nil)
+	end
 
 	-- TreeSitter
 	highlight("TSError", colors.bright_red, nil, nil, nil)
