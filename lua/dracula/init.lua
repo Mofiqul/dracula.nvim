@@ -310,3 +310,4 @@ highlight('LspReferenceText', colors.orange, nil, nil, nil)
 highlight('LspReferenceRead', colors.orange, nil, nil, nil)
 highlight('LspReferenceWrite', colors.orange, nil, nil, nil)
 
+vim.api.nvim_command("highlight! link CompeDocumentation Pmenu")
