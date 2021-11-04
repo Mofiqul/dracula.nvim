@@ -65,7 +65,11 @@ M.apply = function()
 	M.apply_term_colors(colors)
 
 	-- highlight(Group, Foreground, Backgroud, Attribute, Special)
-	highlight("Normal", colors.fg, colors.bg, nil, nil)
+	if(vim.g.dracula_transparent_bg == true) then
+		highlight("Normal", colors.fg, nil, nil, nil)
+	else
+		highlight("Normal", colors.fg, colors.bg, nil, nil)
+	end
 	highlight("NormalFloat", colors.fg, colors.bg, nil, nil)
 	highlight("Comment", colors.comment, nil, nil, nil)
 	highlight("Constant", colors.yellow, nil, nil, nil)
@@ -103,7 +107,13 @@ M.apply = function()
 	highlight("Cursor", nil, nil, "reverse", nil)
 	highlight("CursorColumn", nil, colors.black, "reverse", nil)
 	highlight("CursorLineNr", colors.fg, nil, "bold", nil)
-	highlight("SignColumn", nil, colors.bg, nil, nil)
+
+	if(vim.g.dracula_transparent_bg == true)then
+		highlight("SignColumn", nil, nil, nil, nil)
+	else
+		highlight("SignColumn", nil, colors.bg, nil, nil)
+	end
+	
 	highlight("Conceal", colors.comment, nil, nil, nil)
 	highlight("CursorColumn", nil, colors.black, nil, nil)
 	highlight("CursorLine", nil, colors.selection, nil, nil)
@@ -294,8 +304,14 @@ M.apply = function()
 	highlight("TelescopePromptPrefix", colors.purple, nil, nil, nil)
 
 	-- NvimTree
+	if(vim.g.dracula_transparent_bg == true) then
+		highlight("NvimTreeNormal ", colors.fg, nil, nil, nil)
+		highlight("NvimTreeVertSplit", nil, nil, nil, nil)
+	else
+		highlight("NvimTreeNormal ", colors.fg, colors.menu, nil, nil)
+		highlight("NvimTreeVertSplit", colors.bg, colors.bg, nil, nil)
+	end
 	highlight("NvimTreeRootFolder", colors.fg, nil, 'bold', nil)
-	highlight("NvimTreeNormal ", colors.fg, colors.menu, nil, nil)
 	highlight("NvimTreeGitDirty", colors.yellow, nil, nil, nil)
 	highlight("NvimTreeGitNew", colors.bright_green, nil, nil, nil)
 	highlight("NvimTreeImageFile", colors.pink, nil, nil, nil)
@@ -304,7 +320,6 @@ M.apply = function()
 	highlight("NvimTreeEmptyFolderName", colors.comment, nil, nil, nil)
 	highlight("NvimTreeFolderName", colors.fg, nil, nil, nil)
 	highlight("NvimTreeSpecialFile", colors.pink, nil, 'underline', nil)
-	highlight("NvimTreeVertSplit", colors.menu, colors.menu, nil, nil)
 	highlight("NvimTreeOpenedFolderName", colors.fg, nil, nil, nil)
 	highlight("NvimTreeCursorLine", nil, colors.selection, nil, nil)
 	highlight("NvimTreeIn", nil, colors.selection, nil, nil)
@@ -362,3 +377,4 @@ end
 
 
 return M;
+

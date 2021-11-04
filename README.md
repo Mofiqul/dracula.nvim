@@ -44,6 +44,7 @@ Plug 'Mofiqul/dracula.nvim'
 vim.o.termguicolors = true
 
 vim.g.dracula_show_end_of_buffer = true  -- default false, Turn on or off EndOfBuffer symbol
+vim.g.dracula_transparent_bg = true -- default false, enables transpatent background
 vim.cmd[[colorscheme dracula]]
 
 ```
@@ -51,6 +52,7 @@ vim.cmd[[colorscheme dracula]]
 " Vim-Script:
 let g:termguicolors = true
 let g:dracula_show_end_of_buffer = true  " default false, Turn on or off EndOfBuffer symbol
+let g:dracula_transparent_bg = true -- default false, enables transpatent background
 colorscheme dracula
 ```
 
