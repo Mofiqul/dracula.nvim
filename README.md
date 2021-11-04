@@ -52,7 +52,7 @@ vim.cmd[[colorscheme dracula]]
 " Vim-Script:
 let g:termguicolors = true
 let g:dracula_show_end_of_buffer = true  " default false, Turn on or off EndOfBuffer symbol
-let g:dracula_transparent_bg = true -- default false, enables transparent background
+let g:dracula_transparent_bg = true " default false, enables transparent background
 colorscheme dracula
 ```
 
