@@ -1,10 +1,11 @@
-<h1 align="center">🧛‍♂️ dracula.nvim</h1>
+<h1 align="center" >🧛‍♂️ dracula.nvim</h1>
 
-[Dracula](https://draculatheme.com/) colorscheme for [neovim](https://neovim.io/) written in Lua
+<p align="center"><a href="https://draculatheme.com/">Dracula</a> colorscheme for <a href="https://neovim.io/">NEOVIM</a> written in Lua</p>
 
-![TypeScript and NvimTree](./assets/react.png)
 
-![Lua](./assets/lua.png)
+![TypeScript and NvimTree](./assets/1.png)
+
+![Lua](./assets/2.png)
 
 ## ✔️ Requirements
 - Neovim >= 0.5.0
