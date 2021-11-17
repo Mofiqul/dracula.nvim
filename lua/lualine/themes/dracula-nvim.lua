@@ -1,14 +1,6 @@
 local dracula = {}
 
-local colors = {
-  black        = "#191A21",
-  white        = '#F8F8F2',
-  red          = '#FF5555',
-  green        = '#50FA7B',
-  purple       = '#BD93F9',
-  pink         = '#FF79C6',
-  yellow       = '#F1FA8C',
-}
+local colors = require('dracula').colors()
 
 dracula.normal = {
   b = {fg = colors.purple, bg = colors.black},
