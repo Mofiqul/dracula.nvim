@@ -41,18 +41,11 @@ Plug 'Mofiqul/dracula.nvim'
 
 ```lua
 -- Lua:
-vim.o.termguicolors = true
-
-vim.g.dracula_show_end_of_buffer = true  -- default false, Turn on or off EndOfBuffer symbol
-vim.g.dracula_transparent_bg = true -- default false, enables transparent background
 vim.cmd[[colorscheme dracula]]
-
 ```
+
 ```vim
 " Vim-Script:
-let g:termguicolors = true
-let g:dracula_show_end_of_buffer = true  " default false, Turn on or off EndOfBuffer symbol
-let g:dracula_transparent_bg = true " default false, enables transparent background
 colorscheme dracula
 ```
 
@@ -67,6 +60,28 @@ require('lualine').setup {
     -- ... 
   }
 }'
+```
+
+## 🔧 Configuration
+
+If you're using lua
+```lua
+-- show the '~' characters after the end of buffers
+vim.g.dracula_show_end_of_buffer = true
+-- use transparent background
+vim.g.dracula_transparent_bg = true
+-- set custom lualine background color
+vim.g.dracula_lualine_bg_color = "#44475a"
+```
+
+The same works in viml
+```vim
+" show the '~' characters after the end of buffers
+let g:dracula_show_end_of_buffer = 1
+" use transparent background
+let g:dracula_transparent_bg = 1
+" set custom lualine background color
+let g:dracula_lualine_bg_color = "#44475a"
 ```
 
 ## 🎨 Importing colors for other usage
