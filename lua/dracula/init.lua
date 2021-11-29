@@ -117,6 +117,7 @@ M.apply = function()
 	highlight("Conceal", colors.comment, nil, nil, nil)
 	highlight("CursorColumn", nil, colors.black, nil, nil)
 	highlight("CursorLine", nil, colors.selection, nil, nil)
+	highlight("ColorColumn", nil, colors.selection, nil, nil)
 
 	highlight("StatusLine", colors.white, colors.black, nil, nil)
 	highlight("StatusLineNC", colors.comment, nil, nil, nil)
