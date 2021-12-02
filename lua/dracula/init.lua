@@ -370,9 +370,40 @@ M.apply = function()
 	-- IndentBlankLine
 	highlight("IndentBlanklineContextChar", colors.bright_red, nil, "nocombine", nil)
 	
+	-- Nvim compe
+	highlight("CmpItemAbbrDeprecated", colors.white, colors.menu, 'none', nil)
+	highlight("CmpItemAbbrMatch", colors.cyan, colors.menu, 'none', nil)
+	
 	-- Link highlights
-	vim.api.nvim_command("highlight! link CompeDocumentation Pmenu")
-	vim.api.nvim_command("highlight! link CompeDocumentationBorder Pmenu")
+	vim.api.nvim_command('highlight link CompeDocumentation Pmenu')
+	vim.api.nvim_command('highlight link CompeDocumentationBorder Pmenu')
+	vim.api.nvim_command('highlight link CmpItemKind Pmenu')
+	vim.api.nvim_command('highlight link CmpItemAbbr Pmenu')
+	vim.api.nvim_command('highlight link CmpItemKindMethod TSMethod')
+	vim.api.nvim_command('highlight link CmpItemKindText TSText')
+	vim.api.nvim_command('highlight link CmpItemKindFunction TSFunction')
+	vim.api.nvim_command('highlight link CmpItemKindConstructor TSType')
+	vim.api.nvim_command('highlight link CmpItemKindVariable TSVariable')
+	vim.api.nvim_command('highlight link CmpItemKindClass TSType')
+	vim.api.nvim_command('highlight link CmpItemKindInterface TSType')
+	vim.api.nvim_command('highlight link CmpItemKindModule TSNamespace')
+	vim.api.nvim_command('highlight link CmpItemKindProperty TSProperty')
+	vim.api.nvim_command('highlight link CmpItemKindOperator TSOperator')
+	vim.api.nvim_command('highlight link CmpItemKindReference TSParameterReference')
+	vim.api.nvim_command('highlight link CmpItemKindUnit TSField')
+	vim.api.nvim_command('highlight link CmpItemKindValue TSField')
+	vim.api.nvim_command('highlight link CmpItemKindField TSField')
+	vim.api.nvim_command('highlight link CmpItemKindEnum TSField')
+	vim.api.nvim_command('highlight link CmpItemKindKeyword TSKeyword')
+	vim.api.nvim_command('highlight link CmpItemKindSnippet TSText')
+	vim.api.nvim_command('highlight link CmpItemKindColor cssColor')
+	vim.api.nvim_command('highlight link CmpItemKindFile TSURI')
+	vim.api.nvim_command('highlight link CmpItemKindFolder TSURI')
+	vim.api.nvim_command('highlight link CmpItemKindEvent TSConstant')
+	vim.api.nvim_command('highlight link CmpItemKindEnumMember TSField')
+	vim.api.nvim_command('highlight link CmpItemKindConstant TSConstant')
+	vim.api.nvim_command('highlight link CmpItemKindStruct TSStructure')
+	vim.api.nvim_command('highlight link CmpItemKindTypeParameter TSParameter')
 
 end
 
