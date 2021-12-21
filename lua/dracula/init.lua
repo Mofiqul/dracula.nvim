@@ -219,15 +219,16 @@ M.apply = function()
 	highlight("TSVariable", colors.fg, nil, nil, nil)
 	highlight("TSVariableBuiltin", colors.purple, nil, nil, nil)
 
-	highlight("TSText", colors.orange, nil, nil, nil)
-	highlight("TSStrong", colors.orange, nil, nil, nil)
-	highlight("TSEmphasis", colors.orange, nil, nil, nil)
-	highlight("TSUnderline", colors.orange, nil, nil, nil)
-	highlight("TSTitle", colors.orange, nil, nil, nil)
-	highlight("TSLiteral", colors.orange, nil, nil, nil)
-	highlight("TSURI", colors.orange, nil, nil, nil)
 
-	highlight("TSTag", colors.cyan, nil, nil, nil)
+  highlight("TSText", colors.orange, nil, nil, nil)
+	highlight("TSStrong", colors.yellow, nil, "italic", nil)  -- italic
+	highlight("TSEmphasis", colors.orange, nil, "bold", nil)  -- bold
+	highlight("TSUnderline", colors.orange, nil, nil, nil)
+	highlight("TSTitle", colors.pink, nil, nil, nil)          -- title
+	highlight("TSLiteral", colors.yellow, nil, nil, nil)      -- inline code
+	highlight("TSURI", colors.yellow, nil, "italic", nil)     -- urls
+
+  highlight("TSTag", colors.cyan, nil, nil, nil)
 	highlight("TSTagDelimiter", colors.white, nil, nil, nil)
 
 	-- HTML
