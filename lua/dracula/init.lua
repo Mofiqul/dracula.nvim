@@ -114,7 +114,7 @@ M.apply = function()
 	else
 		highlight("SignColumn", nil, colors.bg, nil, nil)
 	end
-	
+
 	highlight("Conceal", colors.comment, nil, nil, nil)
 	highlight("CursorColumn", nil, colors.black, nil, nil)
 	highlight("CursorLine", nil, colors.selection, nil, nil)
@@ -162,7 +162,7 @@ M.apply = function()
 	highlight("VisualNOS", colors.visual, nil, nil, nil)
 	highlight("WarningMsg", colors.yellow, nil, nil, nil)
 	highlight("WildMenu", colors.black, colors.white, nil, nil)
-	
+
 	if(vim.g.dracula_show_end_of_buffer == true) then
 		highlight("EndOfBuffer", colors.visual, nil, nil, nil)
 	else
@@ -200,7 +200,6 @@ M.apply = function()
 	highlight("TSProperty", colors.fg, nil, nil, nil)
 	highlight("TSConstructor", colors.cyan, nil, nil, nil)
 
-
 	highlight("TSConditional", colors.pink, nil, nil, nil)
 	highlight("TSRepeat", colors.pink, nil, nil, nil)
 	highlight("TSLabel", colors.cyan, nil, nil, nil)
@@ -215,14 +214,12 @@ M.apply = function()
 	highlight("TSStructure", colors.purple, nil, nil, nil)
 	highlight("TSInclude", colors.pink, nil, nil, nil)
 
-
 	highlight("TSVariable", colors.fg, nil, nil, nil)
 	highlight("TSVariableBuiltin", colors.purple, nil, nil, nil)
 
-
   highlight("TSText", colors.orange, nil, nil, nil)
-	highlight("TSStrong", colors.yellow, nil, "italic", nil)  -- italic
-	highlight("TSEmphasis", colors.orange, nil, "bold", nil)  -- bold
+	highlight("TSStrong", colors.orange, nil, "bold", nil)  -- bold
+	highlight("TSEmphasis", colors.yellow, nil, "italic", nil)  -- italic
 	highlight("TSUnderline", colors.orange, nil, nil, nil)
 	highlight("TSTitle", colors.pink, nil, nil, nil)          -- title
 	highlight("TSLiteral", colors.yellow, nil, nil, nil)      -- inline code
@@ -371,11 +368,11 @@ M.apply = function()
 
 	-- IndentBlankLine
 	highlight("IndentBlanklineContextChar", colors.bright_red, nil, "nocombine", nil)
-	
+
 	-- Nvim compe
 	highlight("CmpItemAbbrDeprecated", colors.white, colors.menu, 'none', nil)
 	highlight("CmpItemAbbrMatch", colors.cyan, colors.menu, 'none', nil)
-	
+
 	-- Link highlights
 	vim.api.nvim_command('highlight link CompeDocumentation Pmenu')
 	vim.api.nvim_command('highlight link CompeDocumentationBorder Pmenu')
@@ -409,6 +406,4 @@ M.apply = function()
 
 end
 
-
 return M;
-
