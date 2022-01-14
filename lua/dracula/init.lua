@@ -379,6 +379,11 @@ M.apply = function()
 	highlight("CmpItemAbbrDeprecated", colors.white, colors.menu, 'none', nil)
 	highlight("CmpItemAbbrMatch", colors.cyan, colors.menu, 'none', nil)
 
+    --barbar
+	highlight("BufferCurrentTarget", colors.red, nil, 'none', nil)
+	highlight("BufferVisibleTarget", colors.red, nil, 'none', nil)
+	highlight("BufferInactiveTarget", colors.red, nil, 'none', nil)
+
 	-- Link highlights
 	vim.api.nvim_command('highlight link CompeDocumentation Pmenu')
 	vim.api.nvim_command('highlight link CompeDocumentationBorder Pmenu')
