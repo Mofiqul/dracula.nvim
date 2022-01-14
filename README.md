@@ -101,6 +101,8 @@ vim.g.dracula_show_end_of_buffer = true
 vim.g.dracula_transparent_bg = true
 -- set custom lualine background color
 vim.g.dracula_lualine_bg_color = "#44475a"
+-- set italic comment
+vim.g.dracula_italic_comment = true
 ```
 
 The same works in viml
@@ -141,6 +143,8 @@ let g:dracula_show_end_of_buffer = 1
 let g:dracula_transparent_bg = 1
 " set custom lualine background color
 let g:dracula_lualine_bg_color = "#44475a"
+-- set italic comment
+let g:dracula_italic_comment = 1
 ```
 
 ## 🎨 Importing colors for other usage
