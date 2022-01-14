@@ -57,6 +57,8 @@ end
 
 M.apply = function()
 
+    local isItalic = vim.g.dracula_italic_comment == true
+
 	local highlight = function(group, fg, bg, attr, sp)
 		fg = fg and "guifg=" .. fg or "guifg=NONE"
 		bg = bg and "guibg=" .. bg or "guibg=NONE"
@@ -75,7 +77,7 @@ M.apply = function()
 		highlight("Normal", colors.fg, colors.bg, nil, nil)
 	end
 	highlight("NormalFloat", colors.fg, colors.bg, nil, nil)
-	highlight("Comment", colors.comment, nil, nil, nil)
+	highlight("Comment", colors.comment, nil, isItalic and 'italic' or nil, nil)
 	highlight("Constant", colors.yellow, nil, nil, nil)
 	highlight("String", colors.yellow, nil, nil, nil)
 	highlight("Character", colors.green, nil, nil, nil)
