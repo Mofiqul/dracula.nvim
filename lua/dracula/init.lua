@@ -36,7 +36,7 @@ M.colors = function()
 end
 
 M.apply_term_colors = function(colors)
-	vim.g.terminal_color_0 = colors.back
+	vim.g.terminal_color_0 = colors.black
 	vim.g.terminal_color_1 = colors.red
 	vim.g.terminal_color_2 = colors.green
 	vim.g.terminal_color_3 = colors.yellow
@@ -46,6 +46,7 @@ M.apply_term_colors = function(colors)
 	vim.g.terminal_color_7 = colors.white
 	vim.g.terminal_color_8 = colors.selection
 	vim.g.terminal_color_9 = colors.bright_red
+	vim.g.terminal_color_10 = colors.bright_green
 	vim.g.terminal_color_11 = colors.bright_yellow
 	vim.g.terminal_color_12 = colors.bright_blue
 	vim.g.terminal_color_13 = colors.bright_magenta
