@@ -3,36 +3,36 @@
 local M = {}
 
 local DEFAULT_COLORS = {
-  bg = "#282A36",
-  fg = "#F8F8F2",
-  selection = "#44475A",
-  comment = "#6272A4",
-  red = "#FF5555",
-  orange = "#FFB86C",
-  yellow = "#F1FA8C",
-  green = "#50fa7b",
-  purple = "#BD93F9",
-  cyan = "#8BE9FD",
-  pink = "#FF79C6",
-  bright_red = "#FF6E6E",
-  bright_green = "#69FF94",
-  bright_yellow = "#FFFFA5",
-  bright_blue = "#D6ACFF",
-  bright_magenta = "#FF92DF",
-  bright_cyan = "#A4FFFF",
-  bright_white = "#FFFFFF",
-  menu = "#21222C",
-  visual = "#3E4452",
-  gutter_fg = "#4B5263",
-  nontext = "#3B4048",
-  white = "#ABB2BF",
-  black = "#191A21",
+	bg = "#282A36",
+	fg = "#F8F8F2",
+	selection = "#44475A",
+	comment = "#6272A4",
+	red = "#FF5555",
+	orange = "#FFB86C",
+	yellow = "#F1FA8C",
+	green = "#50fa7b",
+	purple = "#BD93F9",
+	cyan = "#8BE9FD",
+	pink = "#FF79C6",
+	bright_red = "#FF6E6E",
+	bright_green = "#69FF94",
+	bright_yellow = "#FFFFA5",
+	bright_blue = "#D6ACFF",
+	bright_magenta = "#FF92DF",
+	bright_cyan = "#A4FFFF",
+	bright_white = "#FFFFFF",
+	menu = "#21222C",
+	visual = "#3E4452",
+	gutter_fg = "#4B5263",
+	nontext = "#3B4048",
+	white = "#ABB2BF",
+	black = "#191A21",
 }
 
 local colors = vim.tbl_deep_extend('force', DEFAULT_COLORS, vim.g.dracula_colors or {})
 
 M.colors = function()
-  return colors
+	return colors
 end
 
 M.apply_term_colors = function(colors)
@@ -58,7 +58,7 @@ end
 
 M.apply = function()
 
-    local isItalic = vim.g.dracula_italic_comment == true
+	local isItalic = vim.g.dracula_italic_comment == true
 
 	local highlight = function(group, fg, bg, attr, sp)
 		fg = fg and "guifg=" .. fg or "guifg=NONE"
@@ -79,44 +79,44 @@ M.apply = function()
 	end
 	highlight("NormalFloat", colors.fg, colors.bg, nil, nil)
 	highlight("Comment", colors.comment, nil, isItalic and 'italic' or nil, nil)
-	highlight("Constant", colors.yellow, nil, nil, nil)
+	highlight("Constant", colors.purple, nil, nil, nil)
 	highlight("String", colors.yellow, nil, nil, nil)
-	highlight("Character", colors.green, nil, nil, nil)
-	highlight("Number", colors.orange, nil, nil, nil)
-	highlight("Boolean", colors.cyan, nil, nil, nil)
-	highlight("Float", colors.orange, nil, nil, nil)
+	highlight("Character", colors.pink, nil, nil, nil)
+	highlight("Number", colors.purple, nil, nil, nil)
+	highlight("Boolean", colors.purple, nil, nil, nil)
+	highlight("Float", colors.purple, nil, nil, nil)
 	highlight("FloatBorder", colors.white, nil, nil, nil)
-	highlight("Operator", colors.purple, nil, nil, nil)
-	highlight("Keyword", colors.cyan, nil, nil, nil)
-	highlight("Keywords", colors.cyan, nil, nil, nil)
-	highlight("Identifier", colors.cyan, nil, nil, nil)
-	highlight("Function", colors.yellow, nil, nil, nil)
-	highlight("Statement", colors.purple, nil, nil, nil)
+	highlight("Operator", colors.pink, nil, nil, nil)
+	highlight("Keyword", colors.pink, nil, nil, nil)
+	highlight("Keywords", colors.pink, nil, nil, nil)
+	highlight("Identifier", colors.fg, nil, nil, nil)
+	highlight("Function", colors.green, nil, nil, nil)
+	highlight("Statement", colors.pink, nil, nil, nil)
 	highlight("Conditional", colors.pink, nil, nil, nil)
 	highlight("Repeat", colors.pink, nil, nil, nil)
-	highlight("Label", colors.cyan, nil, nil, nil)
-	highlight("Exception", colors.purple, nil, nil, nil)
-	highlight("PreProc", colors.yellow, nil, nil, nil)
-	highlight("Include", colors.purple, nil, nil, nil)
-	highlight("Define", colors.purple, nil, nil, nil)
+	highlight("Label", colors.pink, nil, nil, nil)
+	highlight("Exception", colors.pink, nil, nil, nil)
+	highlight("PreProc", colors.pink, nil, nil, nil)
+	highlight("Include", colors.pink, nil, nil, nil)
+	highlight("Define", colors.pink, nil, nil, nil)
 	highlight("Title", colors.cyan, nil, nil, nil)
-	highlight("Macro", colors.purple, nil, nil, nil)
-	highlight("PreCondit", colors.cyan, nil, nil, nil)
-	highlight("Type", colors.cyan, nil, nil, nil)
+	highlight("Macro", colors.pink, nil, nil, nil)
+	highlight("PreCondit", colors.pink, nil, nil, nil)
+	highlight("Type", colors.pink, nil, nil, nil)
 	highlight("StorageClass", colors.pink, nil, nil, nil)
-	highlight("Structure", colors.yellow, nil, nil, nil)
-	highlight("TypeDef", colors.yellow, nil, nil, nil)
-	highlight("Special", colors.green, nil, "italic", nil)
-	highlight("SpecialComment", colors.comment, nil, "italic", nil)
+	highlight("Structure", colors.pink, nil, nil, nil)
+	highlight("TypeDef", colors.pink, nil, nil, nil)
+	highlight("Special", colors.pink, nil, "italic", nil)
+	highlight("SpecialComment", colors.cyan, nil, "italic", nil)
 	highlight("Error", colors.bright_red, nil, nil, nil)
 	highlight("Todo", colors.purple, nil, "bold,italic", nil)
-	highlight("Underlined", colors.cyan, nil, "underline", nil)
+	highlight("Underlined", colors.fg, nil, "underline", nil)
 
 	highlight("Cursor", nil, nil, "reverse", nil)
 	highlight("CursorColumn", nil, colors.black, "reverse", nil)
 	highlight("CursorLineNr", colors.fg, nil, "bold", nil)
 
-	if(vim.g.dracula_transparent_bg == true)then
+	if(vim.g.dracula_transparent_bg == true) then
 		highlight("SignColumn", nil, nil, nil, nil)
 	else
 		highlight("SignColumn", nil, colors.bg, nil, nil)
@@ -154,7 +154,7 @@ M.apply = function()
 
 	highlight("Question", colors.purple, nil, nil, nil)
 	highlight("QuickFixLine", colors.black, colors.yellow, nil, nil)
-	highlight("SpecialKey", colors.nontext, nil, nil, nil)
+	highlight("SpecialKey", colors.red, nil, nil, nil)
 
 	highlight("SpellBad", colors.bright_red, nil, "underline", nil)
 	highlight("SpellCap", colors.yellow, nil, nil, nil)
@@ -224,7 +224,7 @@ M.apply = function()
 	highlight("TSVariable", colors.fg, nil, nil, nil)
 	highlight("TSVariableBuiltin", colors.purple, nil, nil, nil)
 
-  highlight("TSText", colors.orange, nil, nil, nil)
+	highlight("TSText", colors.orange, nil, nil, nil)
 	highlight("TSStrong", colors.orange, nil, "bold", nil)  -- bold
 	highlight("TSEmphasis", colors.yellow, nil, "italic", nil)  -- italic
 	highlight("TSUnderline", colors.orange, nil, nil, nil)
@@ -232,7 +232,7 @@ M.apply = function()
 	highlight("TSLiteral", colors.yellow, nil, nil, nil)      -- inline code
 	highlight("TSURI", colors.yellow, nil, "italic", nil)     -- urls
 
-  highlight("TSTag", colors.cyan, nil, nil, nil)
+	highlight("TSTag", colors.cyan, nil, nil, nil)
 	highlight("TSTagDelimiter", colors.white, nil, nil, nil)
 
 	-- HTML
@@ -401,7 +401,7 @@ M.apply = function()
 	highlight("CmpItemAbbrDeprecated", colors.white, colors.menu, 'none', nil)
 	highlight("CmpItemAbbrMatch", colors.cyan, colors.menu, 'none', nil)
 
-    --barbar
+	--barbar
 	highlight("BufferCurrentTarget", colors.red, nil, 'none', nil)
 	highlight("BufferVisibleTarget", colors.red, nil, 'none', nil)
 	highlight("BufferInactiveTarget", colors.red, nil, 'none', nil)
