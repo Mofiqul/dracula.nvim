@@ -21,7 +21,7 @@ local visual = {
 }
 
 local inactive = {
-   a = { fg = colors.white, bg = colors.gray, gui = 'bold' },
+   a = { fg = colors.white, bg = colors.visual, gui = 'bold' },
    b = { fg = colors.black, bg = colors.white },
 }
 
