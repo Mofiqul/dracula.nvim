@@ -412,6 +412,15 @@ local function apply(opts)
       CmpItemKindConstant = "TSConstant",
       CmpItemKindStruct = "TSStructure",
       CmpItemKindTypeParameter = "TSParameter",
+
+      -- TS rainbow colors
+      rainbowcol1 = { fg = colors.red, },
+      rainbowcol2 = { fg = colors.green, },
+      rainbowcol3 = { fg = colors.yellow, },
+      rainbowcol4 = { fg = colors.purple, },
+      rainbowcol5 = { fg = colors.pink, },
+      rainbowcol6 = { fg = colors.cyan, },
+      rainbowcol7 = { fg = colors.white, },
    }
 
    -- apply transparents
