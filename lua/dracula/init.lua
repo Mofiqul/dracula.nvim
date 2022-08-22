@@ -96,7 +96,7 @@ local function load()
    end
 
    -- reset colors
-   if vim.g.colors_name then
+   if g.colors_name then
       cmd("hi clear")
    end
 
