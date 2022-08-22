@@ -73,8 +73,8 @@ local function apply(configs)
    end
 
    -- run highlights link commands
-   for group, command in pairs(links) do
-      nvim_set_hl(0, group, command)
+   for group, setting in pairs(links) do
+      nvim_set_hl(0, group, setting)
    end
 end
 
