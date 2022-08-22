@@ -16,7 +16,7 @@ local DEFAULT_CONFIG = {
    show_end_of_buffer = g.dracula_show_end_of_buffer,
    lualine_bg_color = g.dracula_lualine_bg_color,
    colors = tbl_deep_extend("force", require("dracula.palette"),
-      g.dracula_colors or {}),
+      g.dracula_colors or {}) --[[@as Palette]] ,
 }
 
 local TRANSPARENTS = {
@@ -61,7 +61,7 @@ local function apply(configs)
       end
    end
 
-   local links = {} ---@type Highlight[]
+   local links = {} ---@type table<string, Highlight>
    -- run defined highlights
    for group, value in pairs(groups) do
       if type(value) == "table" then
@@ -74,7 +74,7 @@ local function apply(configs)
    end
 
    -- run highlights link commands
-   for group, command in ipairs(links) do
+   for group, command in pairs(links) do
       nvim_set_hl(0, group, command)
    end
 end
@@ -85,7 +85,7 @@ local local_configs = DEFAULT_CONFIG
 ---@param configs DefaultConfig?
 local function setup(configs)
    if type(configs) == "table" then
-      local_configs = tbl_deep_extend("force", DEFAULT_CONFIG, configs)
+      local_configs = tbl_deep_extend("force", DEFAULT_CONFIG, configs) --[[@as DefaultConfig]]
    end
 end
 
