@@ -8,7 +8,11 @@ local normal = {
    a = { fg = colors.black, bg = colors.purple, gui = 'bold' },
    b = { fg = colors.purple, bg = bg },
    c = { fg = colors.white, bg = bg },
+}
 
+local command = {
+   a = { fg = colors.black, bg = colors.cyan, gui = 'bold' },
+   b = { fg = colors.cyan, bg = bg },
 }
 
 local visual = {
@@ -35,6 +39,7 @@ local insert = {
 
 return {
    normal = normal,
+   command = command,
    visual = visual,
    inactive = inactive,
    replace = replace,
