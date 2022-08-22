@@ -1,1 +1,1 @@
-require("dracula").setup()
+require("dracula").load()
