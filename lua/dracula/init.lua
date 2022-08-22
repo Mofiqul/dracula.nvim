@@ -10,12 +10,14 @@ local tbl_deep_extend = vim.tbl_deep_extend
 ---@field show_end_of_buffer boolean
 ---@field lualine_bg_color string?
 ---@field colors Palette
+---@field overrides table<string, Highlight|string>
 local DEFAULT_CONFIG = {
    italic_comment = false,
    transparent_bg = false,
    show_end_of_buffer = false,
    lualine_bg_color = nil,
    colors = require("dracula.palette"),
+   overrides = {},
 }
 
 local TRANSPARENTS = {
@@ -58,6 +60,10 @@ local function apply(configs)
       for _, group in ipairs(TRANSPARENTS) do
          groups[group].bg = nil
       end
+   end
+
+   for group, setting in pairs(configs.overrides) do
+      groups[group] = setting
    end
 
    local links = {} ---@type table<string, Highlight>
