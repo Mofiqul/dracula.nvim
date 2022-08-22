@@ -8,15 +8,14 @@ local tbl_deep_extend = vim.tbl_deep_extend
 ---@field italic_comment boolean
 ---@field transparent_bg boolean
 ---@field show_end_of_buffer boolean
----@field lualine_bg_color boolean
+---@field lualine_bg_color string?
 ---@field colors Palette
 local DEFAULT_CONFIG = {
-   italic_comment = g.dracula_italic_comment,
-   transparent_bg = g.dracula_transparent_bg,
-   show_end_of_buffer = g.dracula_show_end_of_buffer,
-   lualine_bg_color = g.dracula_lualine_bg_color,
-   colors = tbl_deep_extend("force", require("dracula.palette"),
-      g.dracula_colors or {}) --[[@as Palette]] ,
+   italic_comment = false,
+   transparent_bg = false,
+   show_end_of_buffer = false,
+   lualine_bg_color = nil,
+   colors = require("dracula.palette"),
 }
 
 local TRANSPARENTS = {
