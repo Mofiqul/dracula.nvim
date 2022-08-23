@@ -8,7 +8,7 @@
 
 ## ✔️ Requirements
 
-- Neovim >= 0.5.0
+- Neovim >= 0.7.0
 - Treesitter (optional)
 
 ## #️ Supported Plugins
@@ -24,6 +24,7 @@
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
 - [LSPSaga](https://github.com/glepnir/lspsaga.nvim)
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 
 ## ⬇️ Installation
 
@@ -62,95 +63,115 @@ require('lualine').setup {
     theme = 'dracula-nvim'
     -- ...
   }
-}'
+}
 ```
 
 ## 🔧 Configuration
 
+The configuration must be run before `colorscheme` command to take effect.
+
 If you're using lua
 
 ```lua
--- customize dracula color palette
-vim.g.dracula_colors = {
-  bg = "#282A36",
-  fg = "#F8F8F2",
-  selection = "#44475A",
-  comment = "#6272A4",
-  red = "#FF5555",
-  orange = "#FFB86C",
-  yellow = "#F1FA8C",
-  green = "#50fa7b",
-  purple = "#BD93F9",
-  cyan = "#8BE9FD",
-  pink = "#FF79C6",
-  bright_red = "#FF6E6E",
-  bright_green = "#69FF94",
-  bright_yellow = "#FFFFA5",
-  bright_blue = "#D6ACFF",
-  bright_magenta = "#FF92DF",
-  bright_cyan = "#A4FFFF",
-  bright_white = "#FFFFFF",
-  menu = "#21222C",
-  visual = "#3E4452",
-  gutter_fg = "#4B5263",
-  nontext = "#3B4048",
-}
--- show the '~' characters after the end of buffers
-vim.g.dracula_show_end_of_buffer = true
--- use transparent background
-vim.g.dracula_transparent_bg = true
--- set custom lualine background color
-vim.g.dracula_lualine_bg_color = "#44475a"
--- set italic comment
-vim.g.dracula_italic_comment = true
+local dracula = require("dracula")
+dracula.setup({
+  -- customize dracula color palette
+  colors = {
+    bg = "#282A36",
+    fg = "#F8F8F2",
+    selection = "#44475A",
+    comment = "#6272A4",
+    red = "#FF5555",
+    orange = "#FFB86C",
+    yellow = "#F1FA8C",
+    green = "#50fa7b",
+    purple = "#BD93F9",
+    cyan = "#8BE9FD",
+    pink = "#FF79C6",
+    bright_red = "#FF6E6E",
+    bright_green = "#69FF94",
+    bright_yellow = "#FFFFA5",
+    bright_blue = "#D6ACFF",
+    bright_magenta = "#FF92DF",
+    bright_cyan = "#A4FFFF",
+    bright_white = "#FFFFFF",
+    menu = "#21222C",
+    visual = "#3E4452",
+    gutter_fg = "#4B5263",
+    nontext = "#3B4048",
+  },
+  -- show the '~' characters after the end of buffers
+  show_end_of_buffer = true, -- default false
+  -- use transparent background
+  transparent_bg = true, -- default false
+  -- set custom lualine background color
+  lualine_bg_color = "#44475a", -- default nil
+  -- set italic comment
+  italic_comment = true, -- default false
+  -- overrides the default highlights see `:h synIDattr`
+  overrides = {
+    -- Examples
+    -- NonText = { fg = dracula.colors().white }, -- set NonText fg to white
+    -- NvimTreeIndentMarker = { link = "NonText" }, -- link to NonText highlight
+    -- Nothing = {} -- clear highlight of Nothing
+  },
+})
 ```
 
 The same works in viml
 
 ```vim
-" customize dracula color palette
 lua << EOF
-vim.g.dracula_colors = {
-  bg = "#282A36",
-  fg = "#F8F8F2",
-  selection = "#44475A",
-  comment = "#6272A4",
-  red = "#FF5555",
-  orange = "#FFB86C",
-  yellow = "#F1FA8C",
-  green = "#50fa7b",
-  purple = "#BD93F9",
-  cyan = "#8BE9FD",
-  pink = "#FF79C6",
-  bright_red = "#FF6E6E",
-  bright_green = "#69FF94",
-  bright_yellow = "#FFFFA5",
-  bright_blue = "#D6ACFF",
-  bright_magenta = "#FF92DF",
-  bright_cyan = "#A4FFFF",
-  bright_white = "#FFFFFF",
-  menu = "#21222C",
-  visual = "#3E4452",
-  gutter_fg = "#4B5263",
-  nontext = "#3B4048",
-}
+local dracula = require("dracula")
+dracula.setup({
+  -- customize dracula color palette
+  colors = {
+    bg = "#282A36",
+    fg = "#F8F8F2",
+    selection = "#44475A",
+    comment = "#6272A4",
+    red = "#FF5555",
+    orange = "#FFB86C",
+    yellow = "#F1FA8C",
+    green = "#50fa7b",
+    purple = "#BD93F9",
+    cyan = "#8BE9FD",
+    pink = "#FF79C6",
+    bright_red = "#FF6E6E",
+    bright_green = "#69FF94",
+    bright_yellow = "#FFFFA5",
+    bright_blue = "#D6ACFF",
+    bright_magenta = "#FF92DF",
+    bright_cyan = "#A4FFFF",
+    bright_white = "#FFFFFF",
+    menu = "#21222C",
+    visual = "#3E4452",
+    gutter_fg = "#4B5263",
+    nontext = "#3B4048",
+  },
+  -- show the '~' characters after the end of buffers
+  show_end_of_buffer = true, -- default false
+  -- use transparent background
+  transparent_bg = true, -- default false
+  -- set custom lualine background color
+  lualine_bg_color = "#44475a", -- default nil
+  -- set italic comment
+  italic_comment = true, -- default false
+  -- overrides the default highlights see `:h synIDattr`
+  overrides = {
+    -- Examples
+    -- NonText = { fg = dracula.colors().white }, -- set NonText fg to white
+    -- NvimTreeIndentMarker = { link = "NonText" }, -- link to NonText highlight
+    -- Nothing = {} -- clear highlight of Nothing
+  },
+})
 EOF
-" Enable/disable animations
-let bufferline.animation = v:true
-" show the '~' characters after the end of buffers
-let g:dracula_show_end_of_buffer = 1
-" use transparent background
-let g:dracula_transparent_bg = v:true
-" set custom lualine background color
-let g:dracula_lualine_bg_color = "#44475a"
--- set italic comment
-let g:dracula_italic_comment = 1
 ```
 
 ## 🎨 Importing colors for other usage
 
 ```lua
-require('dracula').colors()
+local colors = require('dracula').colors()
 ```
 
 This will return the folowing table
