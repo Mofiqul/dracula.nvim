@@ -66,21 +66,14 @@ local function apply(configs)
       groups[group] = setting
    end
 
-   local links = {} ---@type table<string, Highlight>
    -- run defined highlights
    for group, value in pairs(groups) do
       if type(value) == "table" then
          ---@cast value Highlight
          nvim_set_hl(0, group, value)
       elseif type(value) == "string" then
-         -- make sure links will run later
-         links[group] = { link = value }
+         nvim_set_hl(0, group, { link = value })
       end
-   end
-
-   -- run highlights link commands
-   for group, setting in pairs(links) do
-      nvim_set_hl(0, group, setting)
    end
 end
 
