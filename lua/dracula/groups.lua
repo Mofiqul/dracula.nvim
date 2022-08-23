@@ -25,7 +25,7 @@
 
 ---setup highlight groups
 ---@param configs DefaultConfig
----@return table<string, Highlight | string>
+---@return table<string, Highlight>
 ---@nodiscard
 local function setup(configs)
    local colors = configs.colors
@@ -341,37 +341,37 @@ local function setup(configs)
       BufferInactiveTarget = { fg = colors.red, },
 
       -- Compe
-      CompeDocumentation = "Pmenu",
-      CompeDocumentationBorder = "Pmenu",
+      CompeDocumentation = { link = "Pmenu" },
+      CompeDocumentationBorder = { link = "Pmenu" },
 
       -- Cmp
-      CmpItemKind = "Pmenu",
-      CmpItemAbbr = "Pmenu",
-      CmpItemKindMethod = "TSMethod",
-      CmpItemKindText = "TSText",
-      CmpItemKindFunction = "TSFunction",
-      CmpItemKindConstructor = "TSType",
-      CmpItemKindVariable = "TSVariable",
-      CmpItemKindClass = "TSType",
-      CmpItemKindInterface = "TSType",
-      CmpItemKindModule = "TSNamespace",
-      CmpItemKindProperty = "TSProperty",
-      CmpItemKindOperator = "TSOperator",
-      CmpItemKindReference = "TSParameterReference",
-      CmpItemKindUnit = "TSField",
-      CmpItemKindValue = "TSField",
-      CmpItemKindField = "TSField",
-      CmpItemKindEnum = "TSField",
-      CmpItemKindKeyword = "TSKeyword",
-      CmpItemKindSnippet = "TSText",
-      CmpItemKindColor = "cssColor",
-      CmpItemKindFile = "TSURI",
-      CmpItemKindFolder = "TSURI",
-      CmpItemKindEvent = "TSConstant",
-      CmpItemKindEnumMember = "TSField",
-      CmpItemKindConstant = "TSConstant",
-      CmpItemKindStruct = "TSStructure",
-      CmpItemKindTypeParameter = "TSParameter",
+      CmpItemKind = { link = "Pmenu" },
+      CmpItemAbbr = { link = "Pmenu" },
+      CmpItemKindMethod = { link = "TSMethod" },
+      CmpItemKindText = { link = "TSText" },
+      CmpItemKindFunction = { link = "TSFunction" },
+      CmpItemKindConstructor = { link = "TSType" },
+      CmpItemKindVariable = { link = "TSVariable" },
+      CmpItemKindClass = { link = "TSType" },
+      CmpItemKindInterface = { link = "TSType" },
+      CmpItemKindModule = { link = "TSNamespace" },
+      CmpItemKindProperty = { link = "TSProperty" },
+      CmpItemKindOperator = { link = "TSOperator" },
+      CmpItemKindReference = { link = "TSParameterReference" },
+      CmpItemKindUnit = { link = "TSField" },
+      CmpItemKindValue = { link = "TSField" },
+      CmpItemKindField = { link = "TSField" },
+      CmpItemKindEnum = { link = "TSField" },
+      CmpItemKindKeyword = { link = "TSKeyword" },
+      CmpItemKindSnippet = { link = "TSText" },
+      CmpItemKindColor = { link = "cssColor" },
+      CmpItemKindFile = { link = "TSURI" },
+      CmpItemKindFolder = { link = "TSURI" },
+      CmpItemKindEvent = { link = "TSConstant" },
+      CmpItemKindEnumMember = { link = "TSField" },
+      CmpItemKindConstant = { link = "TSConstant" },
+      CmpItemKindStruct = { link = "TSStructure" },
+      CmpItemKindTypeParameter = { link = "TSParameter" },
 
       -- TS rainbow colors
       rainbowcol1 = { fg = colors.red, },

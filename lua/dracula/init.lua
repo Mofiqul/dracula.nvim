@@ -10,7 +10,7 @@ local tbl_deep_extend = vim.tbl_deep_extend
 ---@field show_end_of_buffer boolean
 ---@field lualine_bg_color string?
 ---@field colors Palette
----@field overrides table<string, Highlight|string>
+---@field overrides table<string, Highlight>
 local DEFAULT_CONFIG = {
    italic_comment = false,
    transparent_bg = false,
@@ -66,14 +66,9 @@ local function apply(configs)
       groups[group] = setting
    end
 
-   -- run defined highlights
-   for group, value in pairs(groups) do
-      if type(value) == "table" then
-         ---@cast value Highlight
-         nvim_set_hl(0, group, value)
-      elseif type(value) == "string" then
-         nvim_set_hl(0, group, { link = value })
-      end
+   -- set defined highlights
+   for group, setting in pairs(groups) do
+      nvim_set_hl(0, group, setting)
    end
 end
 
