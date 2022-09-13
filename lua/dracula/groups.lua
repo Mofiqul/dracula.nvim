@@ -402,7 +402,7 @@ local function setup(configs)
       NavicIconsOperator = { link = "CmpItemKindOperator" },
       NavicIconsTypeParameter = { link = "CmpItemKindTypeParameter" },
       NavicText = { fg = 'gray' },
-      NavicSeparator = { fg = 'blue' },
+      NavicSeparator = { fg = 'gray' },
 
 
       -- TS rainbow colors
