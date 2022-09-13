@@ -373,6 +373,38 @@ local function setup(configs)
       CmpItemKindStruct = { link = "TSStructure" },
       CmpItemKindTypeParameter = { link = "TSParameter" },
 
+      -- navic
+      NavicIconsFile = { link = "CmpItemKindFile" },
+      NavicIconsModule = { link = "CmpItemKindModule" },
+      NavicIconsNamespace = { link = "CmpItemKindModule" },
+      NavicIconsPackage = { link = "CmpItemKindModule" },
+      NavicIconsClass = { link = "CmpItemKindClass" },
+      NavicIconsMethod = { link = "CmpItemKindMethod" },
+      NavicIconsProperty = { link = "CmpItemKindProperty" },
+      NavicIconsField = { link = "CmpItemKindField" },
+      NavicIconsConstructor = { link = "CmpItemKindConstructor" },
+      NavicIconsEnum = { link = "CmpItemKindEnum" },
+      NavicIconsInterface = { link = "CmpItemKindInterface" },
+      NavicIconsFunction = { link = "CmpItemKindFunction" },
+      NavicIconsVariable = { link = "CmpItemKindVariable" },
+      NavicIconsConstant = { link = "CmpItemKindConstant" },
+      NavicIconsString = { link = "String" },
+      NavicIconsNumber = { link = "Number" },
+      NavicIconsBoolean = { link = "Boolean" },
+      NavicIconsArray = { link = "CmpItemKindClass" },
+      NavicIconsObject = { link = "CmpItemKindClass" },
+      NavicIconsKey = { link = "CmpItemKindKeyword" },
+      NavicIconsKeyword = { link = "CmpItemKindKeyword" },
+      NavicIconsNull = { fg = "blue" },
+      NavicIconsEnumMember = { link = "CmpItemKindEnumMember" },
+      NavicIconsStruct = { link = "CmpItemKindStruct" },
+      NavicIconsEvent = { link = "CmpItemKindEvent" },
+      NavicIconsOperator = { link = "CmpItemKindOperator" },
+      NavicIconsTypeParameter = { link = "CmpItemKindTypeParameter" },
+      NavicText = { fg = 'gray' },
+      NavicSeparator = { fg = 'gray' },
+
+
       -- TS rainbow colors
       rainbowcol1 = { fg = colors.red, },
       rainbowcol2 = { fg = colors.green, },
@@ -387,3 +419,4 @@ end
 return {
    setup = setup,
 }
+
