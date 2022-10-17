@@ -126,63 +126,63 @@ local function setup(configs)
       EndOfBuffer = endOfBuffer,
 
       -- TreeSitter
-      TSError = { fg = colors.bright_red, },
-      TSPunctDelimiter = { fg = colors.fg, },
-      TSPunctBracket = { fg = colors.fg, },
-      TSPunctSpecial = { fg = colors.fg, },
+      ['@error'] = { fg = colors.bright_red, },
+      ['@punctuation.delimiter'] = { fg = colors.fg, },
+      ['@punctuation.bracket'] = { fg = colors.fg, },
+      ['@punctuation.special'] = { fg = colors.fg, },
 
-      TSConstant = { fg = colors.purple, },
-      TSConstantBuiltin = { fg = colors.purple, },
+      ['@constant'] = { fg = colors.purple, },
+      ['@constant.builtin'] = { fg = colors.purple, },
 
-      TSConstMacro = { fg = colors.cyan, },
-      TSStringRegex = { fg = colors.red, },
-      TSString = { fg = colors.yellow, },
-      TSStringEscape = { fg = colors.cyan, },
-      TSCharacter = { fg = colors.green, },
-      TSNumber = { fg = colors.purple, },
-      TSBoolean = { fg = colors.purple, },
-      TSFloat = { fg = colors.green, },
-      TSAnnotation = { fg = colors.yellow, },
-      TSAttribute = { fg = colors.cyan, },
-      TSNamespace = { fg = colors.orange, },
+      ['@constant.macro'] = { fg = colors.cyan, },
+      ['@string.regex'] = { fg = colors.red, },
+      ['@string'] = { fg = colors.yellow, },
+      ['@string.escape'] = { fg = colors.cyan, },
+      ['@character'] = { fg = colors.green, },
+      ['@number'] = { fg = colors.purple, },
+      ['@boolean'] = { fg = colors.purple, },
+      ['@float'] = { fg = colors.green, },
+      ['@annotation'] = { fg = colors.yellow, },
+      ['@attribute'] = { fg = colors.cyan, },
+      ['@namespace'] = { fg = colors.orange, },
 
-      TSFuncBuiltin = { fg = colors.cyan, },
-      TSFunction = { fg = colors.green, },
-      TSFuncMacro = { fg = colors.green, },
-      TSParameter = { fg = colors.orange, },
-      TSParameterReference = { fg = colors.orange, },
-      TSMethod = { fg = colors.green, },
-      TSField = { fg = colors.orange, },
-      TSProperty = { fg = colors.fg, },
-      TSConstructor = { fg = colors.cyan, },
+      ['@function.builtin'] = { fg = colors.cyan, },
+      ['@function'] = { fg = colors.green, },
+      ['@function.macro'] = { fg = colors.green, },
+      ['@paramter'] = { fg = colors.orange, },
+      ['@parameter.reference'] = { fg = colors.orange, },
+      ['@method'] = { fg = colors.green, },
+      ['@field'] = { fg = colors.orange, },
+      ['@property'] = { fg = colors.fg, },
+      ['@constructor'] = { fg = colors.cyan, },
 
-      TSConditional = { fg = colors.pink, },
-      TSRepeat = { fg = colors.pink, },
-      TSLabel = { fg = colors.cyan, },
+      ['@conditional'] = { fg = colors.pink, },
+      ['@repeat'] = { fg = colors.pink, },
+      ['@label'] = { fg = colors.cyan, },
 
-      TSKeyword = { fg = colors.pink, },
-      TSKeywordFunction = { fg = colors.cyan, },
-      TSKeywordOperator = { fg = colors.pink, },
-      TSOperator = { fg = colors.pink, },
-      TSException = { fg = colors.purple, },
-      TSType = { fg = colors.bright_cyan, },
-      TSTypeBuiltin = { fg = colors.cyan, italic = true, },
-      TSStructure = { fg = colors.purple, },
-      TSInclude = { fg = colors.pink, },
+      ['@keyword'] = { fg = colors.pink, },
+      ['@keyword.function'] = { fg = colors.cyan, },
+      ['@keyword.operator'] = { fg = colors.pink, },
+      ['@operator'] = { fg = colors.pink, },
+      ['@exception'] = { fg = colors.purple, },
+      ['@type'] = { fg = colors.bright_cyan, },
+      ['@type.builtin'] = { fg = colors.cyan, italic = true, },
+      ['@structure'] = { fg = colors.purple, },
+      ['@include'] = { fg = colors.pink, },
 
-      TSVariable = { fg = colors.fg, },
-      TSVariableBuiltin = { fg = colors.purple, },
+      ['@variable'] = { fg = colors.fg, },
+      ['@variable.builtin'] = { fg = colors.purple, },
 
-      TSText = { fg = colors.orange, },
-      TSStrong = { fg = colors.orange, bold = true, }, -- bold
-      TSEmphasis = { fg = colors.yellow, italic = true, }, -- italic
-      TSUnderline = { fg = colors.orange, },
-      TSTitle = { fg = colors.pink, }, -- title
-      TSLiteral = { fg = colors.yellow, }, -- inline code
-      TSURI = { fg = colors.yellow, italic = true, }, -- urls
+      ['@text'] = { fg = colors.orange, },
+      ['@text.strong'] = { fg = colors.orange, bold = true, }, -- bold
+      ['@text.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
+      ['@text.underline'] = { fg = colors.orange, },
+      ['@text.title'] = { fg = colors.pink, }, -- title
+      ['@text.literal'] = { fg = colors.yellow, }, -- inline code
+      ['@text.uri'] = { fg = colors.yellow, italic = true, }, -- urls
 
-      TSTag = { fg = colors.cyan, },
-      TSTagDelimiter = { fg = colors.white, },
+      ['@tag'] = { fg = colors.cyan, },
+      ['@tag.delimiter'] = { fg = colors.white, },
 
       -- HTML
       htmlArg = { fg = colors.yellow, },
