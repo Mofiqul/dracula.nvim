@@ -274,6 +274,17 @@ local function setup(configs)
 
       NvimTreeEndOfBuffer = endOfBuffer,
 
+      -- NeoTree
+      NeoTreeNormal = { fg = colors.fg },
+      NeoTreeNormalNC = { fg = colors.fg },
+      NeoTreeDirectoryName = { fg = colors.fg },
+      NeoTreeGitUnstaged = { fg = colors.bright_magenta },
+      NeoTreeGitModified = { fg = colors.bright_magenta },
+      NeoTreeGitUntracked = { fg = colors.bright_green },
+      NeoTreeDirectoryIcon = { fg = colors.purple },
+      NeoTreeIndentMarker = { fg = colors.nontext },
+      NeoTreeDotfile = { fg = colors.comment },
+
       -- Bufferline
       BufferLineIndicatorSelected = { fg = colors.purple, },
       BufferLineFill = { bg = colors.black, },
