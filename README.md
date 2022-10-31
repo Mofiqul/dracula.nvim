@@ -19,6 +19,7 @@
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+- [NeoTree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [BufferLine](https://github.com/akinsho/nvim-bufferline.lua)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
