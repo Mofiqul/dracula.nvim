@@ -182,12 +182,13 @@ local function setup(configs)
       ['@text.uri'] = { fg = colors.yellow, italic = true, }, -- urls
 
       ['@tag'] = { fg = colors.cyan, },
-      ['@tag.delimiter'] = { fg = colors.white, },
+      ['@tag.attribute'] = { fg = colors.green, },
+      ['@tag.delimiter'] = { fg = colors.cyan, },
 
       -- HTML
-      htmlArg = { fg = colors.yellow, },
+      htmlArg = { fg = colors.green, },
       htmlBold = { fg = colors.yellow, bold = true, },
-      htmlEndTag = { fg = colors.white, },
+      htmlEndTag = { fg = colors.cyan, },
       htmlH1 = { fg = colors.pink, },
       htmlH2 = { fg = colors.pink, },
       htmlH3 = { fg = colors.pink, },
@@ -198,8 +199,8 @@ local function setup(configs)
       htmlLink = { fg = colors.purple, underline = true, },
       htmlSpecialChar = { fg = colors.yellow, },
       htmlSpecialTagName = { fg = colors.cyan, },
-      htmlTag = { fg = colors.pink, },
-      htmlTagN = { fg = colors.pink, },
+      htmlTag = { fg = colors.cyan, },
+      htmlTagN = { fg = colors.cyan, },
       htmlTagName = { fg = colors.cyan, },
       htmlTitle = { fg = colors.white, },
 
