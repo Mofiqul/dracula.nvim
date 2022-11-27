@@ -246,6 +246,7 @@ local function setup(configs)
       GitSignsAddLn = { fg = colors.black, bg = colors.bright_green, },
       GitSignsChangeLn = { fg = colors.black, bg = colors.cyan, },
       GitSignsDeleteLn = { fg = colors.black, bg = colors.bright_red, },
+      GitSignsCurrentLineBlame = { fg = colors.white, },
 
       -- Telescope
       TelescopePromptBorder = { fg = colors.comment, },
