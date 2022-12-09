@@ -185,6 +185,18 @@ local function setup(configs)
       ['@tag.attribute'] = { fg = colors.green, },
       ['@tag.delimiter'] = { fg = colors.cyan, },
 
+        -- Semantic 
+      ['@class'] = { fg = colors.cyan },
+      ['@struct'] = { fg = colors.cyan },
+      ['@enum'] = { fg = colors.cyan },
+      ['@enumMember'] = { fg = colors.purple },
+      ['@event'] = { fg = colors.cyan },
+      ['@interface'] = { fg = colors.cyan },
+      ['@modifier'] = { fg = colors.cyan },
+      ['@regexp'] = { fg = colors.yellow },
+      ['@typeParameter'] = { fg = colors.cyan },
+      ['@decorator'] = { fg = colors.cyan },
+
       -- HTML
       htmlArg = { fg = colors.green, },
       htmlBold = { fg = colors.yellow, bold = true, },
