@@ -167,6 +167,7 @@ local function setup(configs)
       ['@exception'] = { fg = colors.purple, },
       ['@type'] = { fg = colors.bright_cyan, },
       ['@type.builtin'] = { fg = colors.cyan, italic = true, },
+      ['@type.qualifier'] = { fg = colors.pink, },
       ['@structure'] = { fg = colors.purple, },
       ['@include'] = { fg = colors.pink, },
 
