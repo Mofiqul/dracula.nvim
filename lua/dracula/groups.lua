@@ -133,6 +133,7 @@ local function setup(configs)
 
       ['@constant'] = { fg = colors.purple, },
       ['@constant.builtin'] = { fg = colors.purple, },
+      ['@symbol'] = { fg = colors.purple },
 
       ['@constant.macro'] = { fg = colors.cyan, },
       ['@string.regex'] = { fg = colors.red, },
