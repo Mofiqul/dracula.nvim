@@ -133,7 +133,7 @@ local function setup(configs)
 
       ['@constant'] = { fg = colors.purple, },
       ['@constant.builtin'] = { fg = colors.purple, },
-      ['@symbol'] = { fg = colors.purple },
+      ['@symbol'] = { fg = colors.purple, },
 
       ['@constant.macro'] = { fg = colors.cyan, },
       ['@string.regex'] = { fg = colors.red, },
@@ -154,7 +154,7 @@ local function setup(configs)
       ['@parameter.reference'] = { fg = colors.orange, },
       ['@method'] = { fg = colors.green, },
       ['@field'] = { fg = colors.orange, },
-      ['@property'] = { fg = colors.fg, },
+      ['@property'] = { fg = colors.purple, },
       ['@constructor'] = { fg = colors.cyan, },
 
       ['@conditional'] = { fg = colors.pink, },
