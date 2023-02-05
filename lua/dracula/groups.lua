@@ -340,6 +340,7 @@ local function setup(configs)
       LspReferenceText = { fg = colors.orange, },
       LspReferenceRead = { fg = colors.orange, },
       LspReferenceWrite = { fg = colors.orange, },
+      LspCodeLens = { fg = colors.cyan, },
 
       --LSP Saga
       LspFloatWinNormal = { fg = colors.fg, },
