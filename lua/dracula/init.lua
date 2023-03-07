@@ -10,6 +10,7 @@ local tbl_deep_extend = vim.tbl_deep_extend
 ---@field show_end_of_buffer boolean
 ---@field lualine_bg_color string?
 ---@field colors Palette
+---@field theme string?
 ---@field overrides table<string, Highlight>
 local DEFAULT_CONFIG = {
    italic_comment = false,
@@ -18,6 +19,7 @@ local DEFAULT_CONFIG = {
    lualine_bg_color = nil,
    colors = require("dracula.palette"),
    overrides = {},
+   theme = 'dracula'
 }
 
 local TRANSPARENTS = {
@@ -79,11 +81,17 @@ local local_configs = DEFAULT_CONFIG
 local function setup(configs)
    if type(configs) == "table" then
       local_configs = tbl_deep_extend("force", DEFAULT_CONFIG, configs) --[[@as DefaultConfig]]
+      if configs.theme == 'dracula-soft' then
+         print('Setting theme field to dracula-soft')
+         local_configs.colors = require('dracula.palette-soft')
+         print(local_configs)
+      end
    end
 end
 
 ---load dracula colorscheme
-local function load()
+--@param theme string?
+local function load(theme)
    if vim.version().minor < 7 then
       vim.notify_once("dracula.nvim: you must use neovim 0.7 or higher")
       return
@@ -100,7 +108,12 @@ local function load()
 
    o.background = "dark"
    o.termguicolors = true
-   g.colors_name = "dracula"
+   g.colors_name = theme or 'dracula'
+
+   if g.colors_name == 'dracula-soft' then
+      local_configs.theme = 'dracula-soft'
+      local_configs.colors = require('dracula.palette-soft')
+   end
 
    apply(local_configs)
 end
