@@ -365,10 +365,17 @@ local function setup(configs)
       CmpItemAbbrDeprecated = { fg = colors.white, bg = colors.menu, },
       CmpItemAbbrMatch = { fg = colors.cyan, bg = colors.menu, },
 
-      --barbar
-      BufferCurrentTarget = { fg = colors.red, },
-      BufferVisibleTarget = { fg = colors.red, },
-      BufferInactiveTarget = { fg = colors.red, },
+      -- barbar
+      BufferVisibleTarget = { fg = colors.red },
+      BufferTabpages = { fg = colors.nontext, bg = colors.black, bold = true },
+      BufferTabpageFill = { fg = colors.nontext, bg = colors.black },
+      BufferCurrentSign = { fg = colors.purple },
+      BufferCurrentTarget = { fg = colors.red },
+      BufferInactive = { fg = colors.comment, bg = colors.black, italic = true },
+      BufferInactiveIndex = { fg = colors.nontext, bg = colors.black, italic = true },
+      BufferInactiveMod = { fg = colors.yellow, bg = colors.black, italic = true },
+      BufferInactiveSign = { fg = colors.nontext, bg = colors.black, italic = true },
+      BufferInactiveTarget = { fg = colors.red, bg = colors.black, bold = true },
 
       -- Compe
       CompeDocumentation = { link = "Pmenu" },
