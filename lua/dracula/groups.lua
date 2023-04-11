@@ -200,6 +200,22 @@ local function setup(configs)
       ['@typeParameter'] = { fg = colors.cyan },
       ['@decorator'] = { fg = colors.cyan },
 
+        -- LSP Semantic (0.9+)
+      ['@lsp.type.class'] = { fg = colors.cyan },
+      ['@lsp.type.enum'] = { fg = colors.cyan },
+      ['@lsp.type.decorator'] = { fg = colors.green },
+      ['@lsp.type.enumMember'] = { fg = colors.purple },
+      ['@lsp.type.function'] = { fg = colors.green, },
+      ['@lsp.type.interface'] = { fg = colors.cyan },
+      ['@lsp.type.macro'] = { fg = colors.cyan },
+      ['@lsp.type.method'] = { fg = colors.green, },
+      ['@lsp.type.namespace'] = { fg = colors.orange, },
+      ['@lsp.type.parameter'] = { fg = colors.orange, },
+      ['@lsp.type.property'] = { fg = colors.purple, },
+      ['@lsp.type.struct'] = { fg = colors.cyan },
+      ['@lsp.type.type'] = { fg = colors.bright_cyan, },
+      ['@lsp.type.variable'] = { fg = colors.fg, },
+
       -- HTML
       htmlArg = { fg = colors.green, },
       htmlBold = { fg = colors.yellow, bold = true, },
