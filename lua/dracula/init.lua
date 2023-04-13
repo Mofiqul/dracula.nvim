@@ -25,6 +25,8 @@ local TRANSPARENTS = {
    "SignColumn",
    "NvimTreeNormal",
    "NvimTreeVertSplit",
+   "NeoTreeNormal",
+   "NeoTreeNormalNC"
 }
 
 local function apply_term_colors(colors)
