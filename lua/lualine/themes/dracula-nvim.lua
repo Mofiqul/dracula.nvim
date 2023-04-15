@@ -3,7 +3,7 @@ local configs = dracula.configs()
 local colors = dracula.colors()
 
 local bg_dark = configs.lualine_bg_color or colors.black
-local bg = dracula.colors().bg or colors.black
+local bg = dracula.colors().menu or colors.black
 
 local normal = {
    a = { fg = colors.black, bg = colors.purple, gui = 'bold' },
