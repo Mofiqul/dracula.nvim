@@ -6,5 +6,11 @@
     "Lua.runtime.path": [
         "lua/?.lua",
         "lua/?/init.lua"
+    ],
+    "workspace.library": [
+        "/Users/hampus/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/opt/homebrew/Cellar/neovim/0.8.1/share/nvim/runtime/lua",
+        "/Users/hampus/Documents/dracula.nvim/lua",
+        "${3rd}/luv/library"
     ]
 }
