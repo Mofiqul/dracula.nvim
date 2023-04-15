@@ -129,10 +129,11 @@ local function setup(configs)
       ['@error'] = { fg = colors.bright_red, },
       ['@punctuation.delimiter'] = { fg = colors.fg, },
       ['@punctuation.bracket'] = { fg = colors.fg, },
-      ['@punctuation.special'] = { fg = colors.fg, },
+      ['@punctuation.special'] = { fg = colors.cyan, },
 
       ['@constant'] = { fg = colors.purple, },
       ['@constant.builtin'] = { fg = colors.purple, },
+      ['@symbol'] = { fg = colors.purple, },
 
       ['@constant.macro'] = { fg = colors.cyan, },
       ['@string.regex'] = { fg = colors.red, },
@@ -153,7 +154,7 @@ local function setup(configs)
       ['@parameter.reference'] = { fg = colors.orange, },
       ['@method'] = { fg = colors.green, },
       ['@field'] = { fg = colors.orange, },
-      ['@property'] = { fg = colors.fg, },
+      ['@property'] = { fg = colors.purple, },
       ['@constructor'] = { fg = colors.cyan, },
 
       ['@conditional'] = { fg = colors.pink, },
@@ -167,6 +168,7 @@ local function setup(configs)
       ['@exception'] = { fg = colors.purple, },
       ['@type'] = { fg = colors.bright_cyan, },
       ['@type.builtin'] = { fg = colors.cyan, italic = true, },
+      ['@type.qualifier'] = { fg = colors.pink, },
       ['@structure'] = { fg = colors.purple, },
       ['@include'] = { fg = colors.pink, },
 
@@ -177,13 +179,42 @@ local function setup(configs)
       ['@text.strong'] = { fg = colors.orange, bold = true, }, -- bold
       ['@text.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
       ['@text.underline'] = { fg = colors.orange, },
-      ['@text.title'] = { fg = colors.pink, }, -- title
+      ['@text.title'] = { fg = colors.pink, bold = true, }, -- title
       ['@text.literal'] = { fg = colors.yellow, }, -- inline code
       ['@text.uri'] = { fg = colors.yellow, italic = true, }, -- urls
+      ['@text.reference'] = { fg = colors.orange, bold = true, },
 
       ['@tag'] = { fg = colors.cyan, },
       ['@tag.attribute'] = { fg = colors.green, },
       ['@tag.delimiter'] = { fg = colors.cyan, },
+
+        -- Semantic 
+      ['@class'] = { fg = colors.cyan },
+      ['@struct'] = { fg = colors.cyan },
+      ['@enum'] = { fg = colors.cyan },
+      ['@enumMember'] = { fg = colors.purple },
+      ['@event'] = { fg = colors.cyan },
+      ['@interface'] = { fg = colors.cyan },
+      ['@modifier'] = { fg = colors.cyan },
+      ['@regexp'] = { fg = colors.yellow },
+      ['@typeParameter'] = { fg = colors.cyan },
+      ['@decorator'] = { fg = colors.cyan },
+
+        -- LSP Semantic (0.9+)
+      ['@lsp.type.class'] = { fg = colors.cyan },
+      ['@lsp.type.enum'] = { fg = colors.cyan },
+      ['@lsp.type.decorator'] = { fg = colors.green },
+      ['@lsp.type.enumMember'] = { fg = colors.purple },
+      ['@lsp.type.function'] = { fg = colors.green, },
+      ['@lsp.type.interface'] = { fg = colors.cyan },
+      ['@lsp.type.macro'] = { fg = colors.cyan },
+      ['@lsp.type.method'] = { fg = colors.green, },
+      ['@lsp.type.namespace'] = { fg = colors.orange, },
+      ['@lsp.type.parameter'] = { fg = colors.orange, },
+      ['@lsp.type.property'] = { fg = colors.purple, },
+      ['@lsp.type.struct'] = { fg = colors.cyan },
+      ['@lsp.type.type'] = { fg = colors.bright_cyan, },
+      ['@lsp.type.variable'] = { fg = colors.fg, },
 
       -- HTML
       htmlArg = { fg = colors.green, },
@@ -246,6 +277,7 @@ local function setup(configs)
       GitSignsAddLn = { fg = colors.black, bg = colors.bright_green, },
       GitSignsChangeLn = { fg = colors.black, bg = colors.cyan, },
       GitSignsDeleteLn = { fg = colors.black, bg = colors.bright_red, },
+      GitSignsCurrentLineBlame = { fg = colors.white, },
 
       -- Telescope
       TelescopePromptBorder = { fg = colors.comment, },
@@ -276,8 +308,8 @@ local function setup(configs)
       NvimTreeEndOfBuffer = endOfBuffer,
 
       -- NeoTree
-      NeoTreeNormal = { fg = colors.fg },
-      NeoTreeNormalNC = { fg = colors.fg },
+      NeoTreeNormal = { fg = colors.fg, bg = colors.menu, },
+      NeoTreeNormalNC = { fg = colors.fg, bg = colors.menu, },
       NeoTreeDirectoryName = { fg = colors.fg },
       NeoTreeGitUnstaged = { fg = colors.bright_magenta },
       NeoTreeGitModified = { fg = colors.bright_magenta },
@@ -289,6 +321,7 @@ local function setup(configs)
       -- Bufferline
       BufferLineIndicatorSelected = { fg = colors.purple, },
       BufferLineFill = { bg = colors.black, },
+      BufferLineBufferSelected = { bg = colors.bg, },
 
       -- LSP
       DiagnosticError = { fg = colors.red, },
@@ -323,6 +356,7 @@ local function setup(configs)
       LspReferenceText = { fg = colors.orange, },
       LspReferenceRead = { fg = colors.orange, },
       LspReferenceWrite = { fg = colors.orange, },
+      LspCodeLens = { fg = colors.cyan, },
 
       --LSP Saga
       LspFloatWinNormal = { fg = colors.fg, },
@@ -347,10 +381,17 @@ local function setup(configs)
       CmpItemAbbrDeprecated = { fg = colors.white, bg = colors.menu, },
       CmpItemAbbrMatch = { fg = colors.cyan, bg = colors.menu, },
 
-      --barbar
-      BufferCurrentTarget = { fg = colors.red, },
-      BufferVisibleTarget = { fg = colors.red, },
-      BufferInactiveTarget = { fg = colors.red, },
+      -- barbar
+      BufferVisibleTarget = { fg = colors.red },
+      BufferTabpages = { fg = colors.nontext, bg = colors.black, bold = true },
+      BufferTabpageFill = { fg = colors.nontext, bg = colors.black },
+      BufferCurrentSign = { fg = colors.purple },
+      BufferCurrentTarget = { fg = colors.red },
+      BufferInactive = { fg = colors.comment, bg = colors.black, italic = true },
+      BufferInactiveIndex = { fg = colors.nontext, bg = colors.black, italic = true },
+      BufferInactiveMod = { fg = colors.yellow, bg = colors.black, italic = true },
+      BufferInactiveSign = { fg = colors.nontext, bg = colors.black, italic = true },
+      BufferInactiveTarget = { fg = colors.red, bg = colors.black, bold = true },
 
       -- Compe
       CompeDocumentation = { link = "Pmenu" },
