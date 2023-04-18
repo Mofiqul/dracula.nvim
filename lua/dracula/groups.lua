@@ -457,7 +457,6 @@ local function setup(configs)
       NavicText = { fg = 'gray' },
       NavicSeparator = { fg = 'gray' },
 
-
       -- TS rainbow colors
       rainbowcol1 = { fg = colors.red, },
       rainbowcol2 = { fg = colors.green, },
@@ -466,6 +465,13 @@ local function setup(configs)
       rainbowcol5 = { fg = colors.pink, },
       rainbowcol6 = { fg = colors.cyan, },
       rainbowcol7 = { fg = colors.white, },
+
+      -- goolord/alpha-nvim
+      AlphaHeader = { fg = colors.purple },
+      AlphaButtons = { fg = colors.cyan },
+      AlphaShortcut = { fg = colors.orange },
+      AlphaFooter = { fg = colors.purple, italic = true },
+
    }
 end
 
