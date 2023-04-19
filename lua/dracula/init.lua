@@ -80,12 +80,11 @@ local local_configs = DEFAULT_CONFIG
 ---@param configs DefaultConfig?
 local function setup(configs)
    if type(configs) == "table" then
-      local_configs = tbl_deep_extend("force", DEFAULT_CONFIG, configs) --[[@as DefaultConfig]]
-      if configs.theme == 'dracula-soft' then
-         print('Setting theme field to dracula-soft')
-         local_configs.colors = require('dracula.palette-soft')
-         print(local_configs)
+      if configs.theme == "dracula-soft" then
+         -- set dracula-soft palette before merging any `configs.color` user overrides to it
+         DEFAULT_CONFIG.colors = require("dracula.palette-soft")
       end
+      local_configs = tbl_deep_extend("force", DEFAULT_CONFIG, configs) --[[@as DefaultConfig]]
    end
 end
 
