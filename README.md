@@ -46,11 +46,15 @@ Plug 'Mofiqul/dracula.nvim'
 ```lua
 -- Lua:
 vim.cmd[[colorscheme dracula]]
+-- or
+vim.cmd[[colorscheme dracula-soft]]
 ```
 
 ```vim
 " Vim-Script:
 colorscheme dracula
+" or:
+colorscheme dracula-soft
 ```
 
 If you are using [`lualine`](https://github.com/hoob3rt/lualine.nvim), you can also enable the provided theme:
@@ -70,8 +74,9 @@ require('lualine').setup {
 ## 🔧 Configuration
 
 The configuration must be run before `colorscheme` command to take effect.
+To customize the 'dracula-soft' variant, include `theme = 'dracula-soft'` in the `setup()` table below.
 
-If you're using lua
+If you're using Lua:
 
 ```lua
 local dracula = require("dracula")
@@ -119,7 +124,7 @@ dracula.setup({
 })
 ```
 
-The same works in viml
+The same works in Vim script:
 
 ```vim
 lua << EOF
@@ -175,6 +180,6 @@ EOF
 local colors = require('dracula').colors()
 ```
 
-This will return the folowing table
+This will return the following table (`dracula` palette shown):
 
 ![colors](./assets/colors.png)
