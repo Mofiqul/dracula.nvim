@@ -163,6 +163,7 @@ local function setup(configs)
 
       ['@keyword'] = { fg = colors.pink, },
       ['@keyword.function'] = { fg = colors.cyan, },
+      ['@keyword.function.ruby'] = { fg = colors.pink, },
       ['@keyword.operator'] = { fg = colors.pink, },
       ['@operator'] = { fg = colors.pink, },
       ['@exception'] = { fg = colors.purple, },
