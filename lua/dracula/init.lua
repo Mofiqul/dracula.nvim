@@ -114,6 +114,9 @@ local function load(theme)
    if g.colors_name == 'dracula-soft' then
       local_configs.theme = 'dracula-soft'
       local_configs.colors = require('dracula.palette-soft')
+   else
+      local_configs.theme = 'dracula'
+      local_configs.colors = require('dracula.palette')
    end
 
    apply(local_configs)
