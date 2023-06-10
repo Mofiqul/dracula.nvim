@@ -76,17 +76,13 @@ local function apply(configs)
    end
 end
 
-local local_configs = DEFAULT_CONFIG
+local local_configs = {}
 
 ---setup dracula colorscheme
 ---@param configs DefaultConfig?
 local function setup(configs)
    if type(configs) == "table" then
-      if configs.theme == "dracula-soft" then
-         -- set dracula-soft palette before merging any `configs.color` user overrides to it
-         DEFAULT_CONFIG.colors = require("dracula.palette-soft")
-      end
-      local_configs = tbl_deep_extend("force", DEFAULT_CONFIG, configs) --[[@as DefaultConfig]]
+      local_configs = configs --[[@as DefaultConfig]]
    end
 end
 
@@ -111,12 +107,19 @@ local function load(theme)
    o.termguicolors = true
    g.colors_name = theme or 'dracula'
 
+   local load_configs = DEFAULT_CONFIG
+
    if g.colors_name == 'dracula-soft' then
-      local_configs.theme = 'dracula-soft'
-      local_configs.colors = require('dracula.palette-soft')
+      load_configs.theme = 'dracula-soft'
+      load_configs.colors = require('dracula.palette-soft')
+   elseif g.colors_name == 'dracula' then
+      load_configs.theme = 'dracula'
+      load_configs.colors = require('dracula.palette')
    end
 
-   apply(local_configs)
+   load_configs = tbl_deep_extend("force", load_configs, local_configs)
+
+   apply(load_configs)
 end
 
 return {
