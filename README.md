@@ -2,9 +2,8 @@
 
 <p align="center"><a href="https://draculatheme.com/">Dracula</a> colorscheme for <a href="https://neovim.io/">NEOVIM</a> written in Lua</p>
 
-![TypeScript and NvimTree](./assets/1.png)
+![dracula.nvim](./assets/showcase.png)
 
-![Lua](./assets/2.png)
 
 ## ✔️ Requirements
 
