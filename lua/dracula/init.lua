@@ -92,7 +92,7 @@ end
 ---@type DraculaConfig
 local user_configs = {}
 
---- get local configs
+--- get dracula configs
 ---@return DraculaConfig
 local function get_configs()
    local configs = DEFAULT_CONFIG
