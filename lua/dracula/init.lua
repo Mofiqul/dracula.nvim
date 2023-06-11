@@ -11,7 +11,7 @@ local tbl_deep_extend = vim.tbl_deep_extend
 ---@field lualine_bg_color string?
 ---@field colors Palette
 ---@field theme string?
----@field overrides HighlightGroups
+---@field overrides HighlightGroups | fun(colors: Palette): HighlightGroups
 local DEFAULT_CONFIG = {
    italic_comment = false,
    transparent_bg = false,
@@ -52,6 +52,17 @@ local function apply_term_colors(colors)
    g.terminal_color_foreground = colors.fg
 end
 
+--- override colors with colors
+---@param groups HighlightGroups
+---@param overrides HighlightGroups
+---@return HighlightGroups
+local function override_groups(groups, overrides)
+   for group, setting in pairs(overrides) do
+      groups[group] = setting
+   end
+   return groups
+end
+
 ---apply dracula colorscheme
 ---@param configs DraculaConfig
 local function apply(configs)
@@ -66,8 +77,10 @@ local function apply(configs)
       end
    end
 
-   for group, setting in pairs(configs.overrides) do
-      groups[group] = setting
+   if type(configs.overrides) == "table" then
+      groups = override_groups(groups, configs.overrides --[[@as HighlightGroups]])
+   elseif type(configs.overrides) == "function" then
+      groups = override_groups(groups, configs.overrides(colors))
    end
 
    -- set defined highlights
