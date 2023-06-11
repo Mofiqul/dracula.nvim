@@ -4,14 +4,14 @@ local cmd = vim.cmd
 local nvim_set_hl = vim.api.nvim_set_hl
 local tbl_deep_extend = vim.tbl_deep_extend
 
----@class DefaultConfig
+---@class DraculaConfig
 ---@field italic_comment boolean
 ---@field transparent_bg boolean
 ---@field show_end_of_buffer boolean
 ---@field lualine_bg_color string?
 ---@field colors Palette
 ---@field theme string?
----@field overrides table<string, Highlight>
+---@field overrides HighlightGroups
 local DEFAULT_CONFIG = {
    italic_comment = false,
    transparent_bg = false,
@@ -53,7 +53,7 @@ local function apply_term_colors(colors)
 end
 
 ---apply dracula colorscheme
----@param configs DefaultConfig
+---@param configs DraculaConfig
 local function apply(configs)
    local colors = configs.colors
    apply_term_colors(colors)
@@ -76,18 +76,37 @@ local function apply(configs)
    end
 end
 
-local local_configs = {}
+---@type DraculaConfig
+local user_configs = {}
+
+--- get local configs
+---@return DraculaConfig
+local function get_configs()
+   local configs = DEFAULT_CONFIG
+
+   if g.colors_name == 'dracula-soft' then
+      configs.theme = 'dracula-soft'
+      configs.colors = require('dracula.palette-soft')
+   elseif g.colors_name == 'dracula' then
+      configs.theme = 'dracula'
+      configs.colors = require('dracula.palette')
+   end
+
+   configs = tbl_deep_extend("force", configs, user_configs)
+
+   return configs
+end
 
 ---setup dracula colorscheme
----@param configs DefaultConfig?
+---@param configs DraculaConfig?
 local function setup(configs)
    if type(configs) == "table" then
-      local_configs = configs --[[@as DefaultConfig]]
+      user_configs = configs --[[@as DraculaConfig]]
    end
 end
 
 ---load dracula colorscheme
---@param theme string?
+---@param theme string?
 local function load(theme)
    if vim.version().minor < 7 then
       vim.notify_once("dracula.nvim: you must use neovim 0.7 or higher")
@@ -107,24 +126,12 @@ local function load(theme)
    o.termguicolors = true
    g.colors_name = theme or 'dracula'
 
-   local load_configs = DEFAULT_CONFIG
-
-   if g.colors_name == 'dracula-soft' then
-      load_configs.theme = 'dracula-soft'
-      load_configs.colors = require('dracula.palette-soft')
-   elseif g.colors_name == 'dracula' then
-      load_configs.theme = 'dracula'
-      load_configs.colors = require('dracula.palette')
-   end
-
-   load_configs = tbl_deep_extend("force", load_configs, local_configs)
-
-   apply(load_configs)
+   apply(get_configs())
 end
 
 return {
    load = load,
    setup = setup,
-   configs = function() return local_configs end,
-   colors = function() return local_configs.colors end,
+   configs = get_configs,
+   colors = function() return get_configs().colors end,
 }
