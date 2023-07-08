@@ -179,19 +179,19 @@ local function setup(configs)
       ['@variable.builtin'] = { fg = colors.purple, },
 
       ['@text'] = { fg = colors.orange, },
-      ['@text.strong'] = { fg = colors.orange, bold = true, }, -- bold
+      ['@text.strong'] = { fg = colors.orange, bold = true, },     -- bold
       ['@text.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
       ['@text.underline'] = { fg = colors.orange, },
-      ['@text.title'] = { fg = colors.pink, bold = true, }, -- title
-      ['@text.literal'] = { fg = colors.yellow, }, -- inline code
-      ['@text.uri'] = { fg = colors.yellow, italic = true, }, -- urls
+      ['@text.title'] = { fg = colors.pink, bold = true, },        -- title
+      ['@text.literal'] = { fg = colors.yellow, },                 -- inline code
+      ['@text.uri'] = { fg = colors.yellow, italic = true, },      -- urls
       ['@text.reference'] = { fg = colors.orange, bold = true, },
 
       ['@tag'] = { fg = colors.cyan, },
       ['@tag.attribute'] = { fg = colors.green, },
       ['@tag.delimiter'] = { fg = colors.cyan, },
 
-        -- Semantic 
+      -- Semantic
       ['@class'] = { fg = colors.cyan },
       ['@struct'] = { fg = colors.cyan },
       ['@enum'] = { fg = colors.cyan },
@@ -203,7 +203,7 @@ local function setup(configs)
       ['@typeParameter'] = { fg = colors.cyan },
       ['@decorator'] = { fg = colors.cyan },
 
-        -- LSP Semantic (0.9+)
+      -- LSP Semantic (0.9+)
       ['@lsp.type.class'] = { fg = colors.cyan },
       ['@lsp.type.enum'] = { fg = colors.cyan },
       ['@lsp.type.decorator'] = { fg = colors.green },
@@ -325,6 +325,7 @@ local function setup(configs)
       BufferLineIndicatorSelected = { fg = colors.purple, },
       BufferLineFill = { bg = colors.black, },
       BufferLineBufferSelected = { bg = colors.bg, },
+      BufferLineSeparator = { fg = colors.black },
 
       -- LSP
       DiagnosticError = { fg = colors.red, },
@@ -481,4 +482,3 @@ end
 return {
    setup = setup,
 }
-
