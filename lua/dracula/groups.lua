@@ -325,6 +325,7 @@ local function setup(configs)
       BufferLineIndicatorSelected = { fg = colors.purple, },
       BufferLineFill = { bg = colors.black, },
       BufferLineBufferSelected = { bg = colors.bg, },
+      BufferLineSeparator = { fg = colors.black },
 
       -- LSP
       DiagnosticError = { fg = colors.red, },
