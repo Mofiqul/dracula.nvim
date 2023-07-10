@@ -476,6 +476,31 @@ local function setup(configs)
       AlphaShortcut = { fg = colors.orange },
       AlphaFooter = { fg = colors.purple, italic = true },
 
+      -- dap UI
+      DapUIPlayPause = { fg = colors.bright_green },
+      DapUIRestart = { fg = colors.green },
+      DapUIStop = { fg = colors.red },
+      DapUIStepOver = { fg = colors.cyan },
+      DapUIStepInto = { fg = colors.cyan },
+      DapUIStepOut = { fg = colors.cyan },
+      DapUIStepBack = { fg = colors.cyan },
+      DapUIType = { fg = colors.bright_blue },
+      DapUIScope = { fg = colors.bright_cyan },
+      DapUIModifiedValue = { fg = colors.bright_cyan, bold = true },
+      DapUIDecoration = { fg = colors.bright_cyan },
+      DapUIThread = { fg = colors.bright_green },
+      DapUIStoppedThread = { fg = colors.bright_cyan },
+      DapUISource = { fg = colors.bright_blue },
+      DapUILineNumber = { fg = colors.bright_cyan },
+      DapUIFloatBorder = { fg = colors.bright_cyan },
+      DapUIWatchesEmpty = { fg = colors.pink },
+      DapUIWatchesValue = { fg = colors.bright_green },
+      DapUIWatchesError = { fg = colors.pink },
+      DapUIBreakpointsPath = { fg = colors.bright_cyan },
+      DapUIBreakpointsInfo = { fg = colors.bright_green },
+      DapUIBreakpointsCurrentLine = { fg = colors.bright_green, bold = true },
+      DapStoppedLine = { default = true, link = 'Visual' },
+      DapUIWinSelect = { fg = colors.bright_cyan, bold = true },
    }
 end
 

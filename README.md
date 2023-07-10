@@ -25,6 +25,7 @@
 - [LSPSaga](https://github.com/glepnir/lspsaga.nvim)
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 
 ## ⬇️ Installation
 
