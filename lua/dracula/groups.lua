@@ -501,6 +501,17 @@ local function setup(configs)
       DapUIBreakpointsCurrentLine = { fg = colors.bright_green, bold = true },
       DapStoppedLine = { default = true, link = 'Visual' },
       DapUIWinSelect = { fg = colors.bright_cyan, bold = true },
+
+      -- Notify
+      NotifyInfoIcon = { fg = colors().green },
+      NotifyInfoTitle = { fg = colors().green },
+      NotifyInfoBorder = { fg = "#2C453F" },
+      NotifyErrorIcon = { fg = colors().red },
+      NotifyErrorTitle = { fg = colors().red },
+      NotifyErrorBorder = { fg = "#DD6E6B" },
+      NotifyWarnIcon = { fg = colors().orange },
+      NotifyWarnTitle = { fg = colors().orange },
+      NotifyWarnBorder = { fg = "#785637" },
    }
 end
 
