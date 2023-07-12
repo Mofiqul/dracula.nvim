@@ -503,14 +503,14 @@ local function setup(configs)
       DapUIWinSelect = { fg = colors.bright_cyan, bold = true },
 
       -- Notify
-      NotifyInfoIcon = { fg = colors().green },
-      NotifyInfoTitle = { fg = colors().green },
+      NotifyInfoIcon = { fg = colors.green },
+      NotifyInfoTitle = { fg = colors.green },
       NotifyInfoBorder = { fg = "#2C453F" },
-      NotifyErrorIcon = { fg = colors().red },
-      NotifyErrorTitle = { fg = colors().red },
+      NotifyErrorIcon = { fg = colors.red },
+      NotifyErrorTitle = { fg = colors.red },
       NotifyErrorBorder = { fg = "#DD6E6B" },
-      NotifyWarnIcon = { fg = colors().orange },
-      NotifyWarnTitle = { fg = colors().orange },
+      NotifyWarnIcon = { fg = colors.orange },
+      NotifyWarnTitle = { fg = colors.orange },
       NotifyWarnBorder = { fg = "#785637" },
    }
 end
