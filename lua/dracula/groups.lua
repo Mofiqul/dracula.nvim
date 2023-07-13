@@ -377,6 +377,7 @@ local function setup(configs)
       LspSagaShTruncateLine = { fg = colors.comment, },
       LspSagaDocTruncateLine = { fg = colors.comment, },
       LspSagaLspFinderBorder = { fg = colors.comment, },
+      CodeActionNumber = { bg = 'NONE', fg = colors.cyan },
 
       -- IndentBlankLine
       IndentBlanklineContextChar = { fg = colors.bright_red, nocombine = true, },
