@@ -270,7 +270,7 @@ local function setup(configs)
       diffNewFile = { fg = colors.green, },
       diffOldFile = { fg = colors.red, },
 
-      debugPc = { bg = colors.cyan, },
+      debugPc = { bg = colors.menu, },
       debugBreakpoint = { fg = colors.red, reverse = true, },
 
       -- Git Signs
