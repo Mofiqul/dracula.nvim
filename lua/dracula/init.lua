@@ -4,7 +4,6 @@ local cmd = vim.cmd
 local nvim_set_hl = vim.api.nvim_set_hl
 local tbl_deep_extend = vim.tbl_deep_extend
 
----@class DraculaConfig
 ---@field italic_comment boolean
 ---@field transparent_bg boolean
 ---@field show_end_of_buffer boolean
@@ -17,9 +16,9 @@ local DEFAULT_CONFIG = {
    transparent_bg = false,
    show_end_of_buffer = false,
    lualine_bg_color = nil,
-   colors = require("dracula.palette"),
+   colors = require("pureblack.palette"),
    overrides = {},
-   theme = 'dracula'
+   theme = 'pureblack'
 }
 
 local TRANSPARENTS = {
@@ -68,7 +67,7 @@ end
 local function apply(configs)
    local colors = configs.colors
    apply_term_colors(colors)
-   local groups = require("dracula.groups").setup(configs)
+   local groups = require("pureblack.groups").setup(configs)
 
    -- apply transparents
    if configs.transparent_bg then
@@ -89,20 +88,17 @@ local function apply(configs)
    end
 end
 
----@type DraculaConfig
 local user_configs = {}
 
---- get dracula configs
----@return DraculaConfig
 local function get_configs()
    local configs = DEFAULT_CONFIG
 
    if g.colors_name == 'dracula-soft' then
       configs.theme = 'dracula-soft'
       configs.colors = require('dracula.palette-soft')
-   elseif g.colors_name == 'dracula' then
-      configs.theme = 'dracula'
-      configs.colors = require('dracula.palette')
+   elseif g.colors_name == 'pureblack' then
+      configs.theme = 'pureblack'
+      configs.colors = require('pureblack.palette')
    end
 
    configs = tbl_deep_extend("force", configs, user_configs)
@@ -111,7 +107,6 @@ local function get_configs()
 end
 
 ---setup dracula colorscheme
----@param configs DraculaConfig?
 local function setup(configs)
    if type(configs) == "table" then
       user_configs = configs --[[@as DraculaConfig]]
@@ -122,7 +117,7 @@ end
 ---@param theme string?
 local function load(theme)
    if vim.version().minor < 7 then
-      vim.notify_once("dracula.nvim: you must use neovim 0.7 or higher")
+      vim.notify_once("pureblack.nvim: you must use neovim 0.7 or higher")
       return
    end
 
@@ -137,7 +132,7 @@ local function load(theme)
 
    o.background = "dark"
    o.termguicolors = true
-   g.colors_name = theme or 'dracula'
+   g.colors_name = theme or 'pureblack'
 
    apply(get_configs())
 end
