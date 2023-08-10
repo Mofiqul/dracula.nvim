@@ -62,8 +62,6 @@ local function override_groups(groups, overrides)
    return groups
 end
 
----apply dracula colorscheme
----@param configs DraculaConfig
 local function apply(configs)
    local colors = configs.colors
    apply_term_colors(colors)
