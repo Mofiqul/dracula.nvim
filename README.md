@@ -1,5 +1,5 @@
 <h1 align="center" > pureblack.nvim </h1>
-<h1> Warming: This is a Mofiqul/dracula.nvim fork! </h1>
+<h3> Warming: This is a Mofiqul/dracula.nvim fork! </h3>
 
 ![pureblack.nvim](./assets/neovim.webp)
 
@@ -9,7 +9,7 @@
 - Neovim >= 0.8.0
 - Treesitter (optional)
 
-## #️ Supported Plugins
+## Supported Plugins
 
 - [LSP](https://github.com/neovim/nvim-lspconfig)
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
