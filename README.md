@@ -1,5 +1,6 @@
-<h1 align="center" >‍pureblack.nvim</h1>
-# Warming: This is a Mofiqul/dracula.nvim fork!
+<h1 align="center" > pureblack.nvim </h1>
+<h1> Warming: This is a Mofiqul/dracula.nvim fork! </h1>
+
 ![pureblack.nvim](./assets/neovim.webp)
 
 
