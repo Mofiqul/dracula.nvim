@@ -91,10 +91,7 @@ local user_configs = {}
 local function get_configs()
    local configs = DEFAULT_CONFIG
 
-   if g.colors_name == 'dracula-soft' then
-      configs.theme = 'dracula-soft'
-      configs.colors = require('dracula.palette-soft')
-   elseif g.colors_name == 'pureblack' then
+   if g.colors_name == 'pureblack' then
       configs.theme = 'pureblack'
       configs.colors = require('pureblack.palette')
    end
@@ -104,14 +101,12 @@ local function get_configs()
    return configs
 end
 
----setup dracula colorscheme
 local function setup(configs)
    if type(configs) == "table" then
-      user_configs = configs --[[@as DraculaConfig]]
+      user_configs = configs
    end
 end
 
----load dracula colorscheme
 ---@param theme string?
 local function load(theme)
    if vim.version().minor < 7 then
