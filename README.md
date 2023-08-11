@@ -26,7 +26,7 @@
 - [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 
-## ⬇️ Installation
+##  Installation
 
 Install via package manager
 
@@ -47,7 +47,7 @@ Plug 'daviii-lopes/pureblack.nvim'
 }
 ```
 
-## 🚀 Usage
+## Usage
 
 ```lua
 -- Lua:
