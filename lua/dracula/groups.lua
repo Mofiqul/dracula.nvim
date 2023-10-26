@@ -480,6 +480,15 @@ local function setup(configs)
       AlphaShortcut = { fg = colors.orange },
       AlphaFooter = { fg = colors.purple, italic = true },
 
+      -- nvimdev/dashboard-nvim
+      DashboardShortCut = { fg = colors.cyan },
+      DashboardHeader = { fg = colors.purple },
+      DashboardCenter = { fg = colors.fg },
+      DashboardFooter = { fg = colors.purple, italic = true },
+      DashboardKey = { fg = colors.orange },
+      DashboardDesc = { fg = colors.cyan },
+      DashboardIcon = { fg = colors.cyan, bold = true },
+
       -- dap UI
       DapUIPlayPause = { fg = colors.bright_green },
       DapUIRestart = { fg = colors.green },
