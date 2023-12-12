@@ -122,7 +122,7 @@ end
 ---@param theme string?
 local function load(theme)
    if vim.version().minor < 7 then
-      vim.notify_once("dracula.nvim: you must use neovim 0.7 or higher")
+      vim.api.nvim_err_writeln("dracula.nvim: you must use neovim 0.7 or higher")
       return
    end
 
