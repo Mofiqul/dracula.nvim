@@ -121,8 +121,8 @@ end
 ---load dracula colorscheme
 ---@param theme string?
 local function load(theme)
-   if vim.version().minor < 7 then
-      vim.api.nvim_err_writeln("dracula.nvim: you must use neovim 0.7 or higher")
+   if vim.fn.has('nvim-0.7') ~= 1 then
+      vim.notify("dracula.nvim: you must use neovim 0.7 or higher")
       return
    end
 
