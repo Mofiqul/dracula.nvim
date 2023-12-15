@@ -95,6 +95,7 @@ local function setup(configs)
 
       ErrorMsg = { fg = colors.bright_red, },
       VertSplit = { fg = colors.black, },
+      WinSeparator = { fg = colors.black, },
       Folded = { fg = colors.comment, },
       FoldColumn = {},
       Search = { fg = colors.black, bg = colors.orange, },
@@ -179,19 +180,19 @@ local function setup(configs)
       ['@variable.builtin'] = { fg = colors.purple, },
 
       ['@text'] = { fg = colors.orange, },
-      ['@text.strong'] = { fg = colors.orange, bold = true, }, -- bold
+      ['@text.strong'] = { fg = colors.orange, bold = true, },     -- bold
       ['@text.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
       ['@text.underline'] = { fg = colors.orange, },
-      ['@text.title'] = { fg = colors.pink, bold = true, }, -- title
-      ['@text.literal'] = { fg = colors.yellow, }, -- inline code
-      ['@text.uri'] = { fg = colors.yellow, italic = true, }, -- urls
+      ['@text.title'] = { fg = colors.pink, bold = true, },        -- title
+      ['@text.literal'] = { fg = colors.yellow, },                 -- inline code
+      ['@text.uri'] = { fg = colors.yellow, italic = true, },      -- urls
       ['@text.reference'] = { fg = colors.orange, bold = true, },
 
       ['@tag'] = { fg = colors.cyan, },
       ['@tag.attribute'] = { fg = colors.green, },
       ['@tag.delimiter'] = { fg = colors.cyan, },
 
-        -- Semantic 
+      -- Semantic
       ['@class'] = { fg = colors.cyan },
       ['@struct'] = { fg = colors.cyan },
       ['@enum'] = { fg = colors.cyan },
@@ -203,7 +204,7 @@ local function setup(configs)
       ['@typeParameter'] = { fg = colors.cyan },
       ['@decorator'] = { fg = colors.cyan },
 
-        -- LSP Semantic (0.9+)
+      -- LSP Semantic (0.9+)
       ['@lsp.type.class'] = { fg = colors.cyan },
       ['@lsp.type.enum'] = { fg = colors.cyan },
       ['@lsp.type.decorator'] = { fg = colors.green },
@@ -531,4 +532,3 @@ end
 return {
    setup = setup,
 }
-
