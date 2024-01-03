@@ -387,8 +387,8 @@ local function setup(configs)
       IndentBlanklineContextChar = { fg = colors.bright_red, nocombine = true, },
 
       -- Nvim compe
-      CmpItemAbbrDeprecated = { fg = colors.white, bg = colors.menu, },
-      CmpItemAbbrMatch = { fg = colors.cyan, bg = colors.menu, },
+      CmpItemAbbrDeprecated = { fg = colors.white, bg = colors.bg, },
+      CmpItemAbbrMatch = { fg = colors.cyan, bg = colors.bg, },
 
       -- barbar
       BufferVisibleTarget = { fg = colors.red },
@@ -407,8 +407,8 @@ local function setup(configs)
       CompeDocumentationBorder = { link = "Pmenu" },
 
       -- Cmp
-      CmpItemKind = { link = "Pmenu" },
-      CmpItemAbbr = { link = "Pmenu" },
+      CmpItemAbbr = { fg = colors.white, bg = colors.bg },
+      CmpItemKind = { fg = colors.white, bg = colors.bg },
       CmpItemKindMethod = { link = "@method" },
       CmpItemKindText = { link = "@text" },
       CmpItemKindFunction = { link = "@function" },
