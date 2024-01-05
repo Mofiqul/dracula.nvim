@@ -483,7 +483,7 @@ local function setup(configs)
       RainbowDelimiterRed = { fg = colors.fg },
       RainbowDelimiterYellow = {fg = colors.pink },
       RainbowDelimiterBlue = {fg = colors.cyan },
-      RainbowDelimiterOrange ={ fg = colors.green },
+      RainbowDelimiterOrange = { fg = colors.green },
       RainbowDelimiterGreen = { fg = colors.purple },
       RainbowDelimiterViolet = { fg = colors.orange },
       RainbowDelimiterCyan = { fg = colors.fg },
