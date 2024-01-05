@@ -296,6 +296,9 @@ local function setup(configs)
       TelescopeResultsDiffChange = { fg = colors.cyan },
       TelescopeResultsDiffAdd = { fg = colors.green },
 
+      -- Flash
+      FlashLabel =  { bg = colors.red, fg = colors.bright_white },
+
       -- NvimTree
       NvimTreeNormal = { fg = colors.fg, bg = colors.menu, },
       NvimTreeVertSplit = { fg = colors.bg, bg = colors.bg, },
@@ -365,6 +368,7 @@ local function setup(configs)
       LspReferenceRead = { fg = colors.orange, },
       LspReferenceWrite = { fg = colors.orange, },
       LspCodeLens = { fg = colors.cyan, },
+      LspInlayHint = { fg = "#969696", bg = "#2f3146" },
 
       --LSP Saga
       LspFloatWinNormal = { fg = colors.fg, },
@@ -467,13 +471,27 @@ local function setup(configs)
       NavicSeparator = { fg = 'gray' },
 
       -- TS rainbow colors
-      rainbowcol1 = { fg = colors.red, },
-      rainbowcol2 = { fg = colors.green, },
-      rainbowcol3 = { fg = colors.yellow, },
-      rainbowcol4 = { fg = colors.purple, },
-      rainbowcol5 = { fg = colors.pink, },
-      rainbowcol6 = { fg = colors.cyan, },
-      rainbowcol7 = { fg = colors.white, },
+      rainbowcol1 = { fg = colors.fg },
+      rainbowcol2 = { fg = colors.pink },
+      rainbowcol3 = { fg = colors.cyan },
+      rainbowcol4 = { fg = colors.green },
+      rainbowcol5 = { fg = colors.purple },
+      rainbowcol6 = { fg = colors.orange },
+      rainbowcol7 = { fg = colors.fg },
+
+      -- Rainbow delimiter
+      RainbowDelimiterRed = { fg = colors.fg },
+      RainbowDelimiterYellow = {fg = colors.pink },
+      RainbowDelimiterBlue = {fg = colors.cyan },
+      RainbowDelimiterOrange = { fg = colors.green },
+      RainbowDelimiterGreen = { fg = colors.purple },
+      RainbowDelimiterViolet = { fg = colors.orange },
+      RainbowDelimiterCyan = { fg = colors.fg },
+
+      -- mini.indentscope
+      MiniIndentscopeSymbol = { fg = "#B5629B" },
+      MiniIndentscopeSymbolOff = { fg = "#B5629B" },
+
 
       -- goolord/alpha-nvim
       AlphaHeader = { fg = colors.purple },
