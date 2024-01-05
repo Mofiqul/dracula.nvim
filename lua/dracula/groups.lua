@@ -297,7 +297,7 @@ local function setup(configs)
       TelescopeResultsDiffAdd = { fg = colors.green },
 
       -- Flash
-      FlashLabel =  { bg = colors.red, fg = colors.bright_white }
+      FlashLabel =  { bg = colors.red, fg = colors.bright_white },
 
       -- NvimTree
       NvimTreeNormal = { fg = colors.fg, bg = colors.menu, },
@@ -471,13 +471,13 @@ local function setup(configs)
       NavicSeparator = { fg = 'gray' },
 
       -- TS rainbow colors
-      rainbowcol1 = { fg = colors.fg, },
-      rainbowcol2 = { fg = colors.pink, },
-      rainbowcol3 = { fg = colors.cyan, },
-      rainbowcol4 = { fg = colors.green, },
-      rainbowcol5 = { fg = colors.purple, },
-      rainbowcol6 = { fg = colors.orange, },
-      rainbowcol7 = { fg = colors.fg, },
+      rainbowcol1 = { fg = colors.fg },
+      rainbowcol2 = { fg = colors.pink },
+      rainbowcol3 = { fg = colors.cyan },
+      rainbowcol4 = { fg = colors.green },
+      rainbowcol5 = { fg = colors.purple },
+      rainbowcol6 = { fg = colors.orange },
+      rainbowcol7 = { fg = colors.fg },
 
       -- Rainbow delimiter
       RainbowDelimiterRed = { fg = colors.fg },
