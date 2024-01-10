@@ -71,6 +71,22 @@ require('lualine').setup {
 }
 ```
 
+If you are using [LazyVim](https://github.com/LazyVim/LazyVim), you can add this to your plugins/colorscheme.lua file:
+```
+return {
+  -- add dracula
+  { "Mofiqul/dracula.nvim" },
+
+  -- Configure LazyVim to load dracula
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "dracula",
+    },
+  },
+}
+```
+
 ## 🔧 Configuration
 
 The configuration must be run before `colorscheme` command to take effect.
