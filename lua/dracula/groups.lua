@@ -1,27 +1,27 @@
 ---@class Highlight
----@field fg string color name or "#RRGGBB"
----@field foreground string same fg, color name or "#RRGGBB"
----@field bg string color name or "#RRGGBB"
----@field background string same bg, color name or "#RRGGBB"
----@field sp string color name or "#RRGGBB"
----@field special string same sg, color name or "#RRGGBB"
----@field blend integer value between 0 and 100
----@field bold boolean
----@field standout boolean
----@field underline boolean
----@field undercurl boolean
----@field underdouble boolean
----@field underdotted boolean
----@field underdashed boolean
----@field strikethrough boolean
----@field italic boolean
----@field reverse boolean
----@field nocombine boolean
----@field link string name of another highlight group to link to, see |:hi-link|.
----@field default string Don't override existing definition |:hi-default|
----@field ctermfg integer Sets foreground of cterm color |highlight-ctermfg|
----@field ctermbg integer Sets background of cterm color |highlight-ctermbg|
----@field cterm table cterm attribute map, like |highlight-args|.
+---@variable.member fg string color name or "#RRGGBB"
+---@variable.member foreground string same fg, color name or "#RRGGBB"
+---@variable.member bg string color name or "#RRGGBB"
+---@variable.member background string same bg, color name or "#RRGGBB"
+---@variable.member sp string color name or "#RRGGBB"
+---@variable.member special string same sg, color name or "#RRGGBB"
+---@variable.member blend integer value between 0 and 100
+---@variable.member bold boolean
+---@variable.member standout boolean
+---@variable.member underline boolean
+---@variable.member undercurl boolean
+---@variable.member underdouble boolean
+---@variable.member underdotted boolean
+---@variable.member underdashed boolean
+---@variable.member strikethrough boolean
+---@variable.member italic boolean
+---@variable.member reverse boolean
+---@variable.member nocombine boolean
+---@variable.member link string name of another highlight group to link to, see |:hi-link|.
+---@variable.member default string Don't override existing definition |:hi-default|
+---@variable.member ctermfg integer Sets foreground of cterm color |highlight-ctermfg|
+---@variable.member ctermbg integer Sets background of cterm color |highlight-ctermbg|
+---@variable.member cterm table cterm attribute map, like |highlight-args|.
 
 ---@alias HighlightGroups table<string, Highlight>
 
@@ -132,36 +132,36 @@ local function setup(configs)
       ['@error'] = { fg = colors.bright_red, },
       ['@punctuation.delimiter'] = { fg = colors.fg, },
       ['@punctuation.bracket'] = { fg = colors.fg, },
-      ['@punctuation.special'] = { fg = colors.cyan, },
+      ['@markup.list'] = { fg = colors.cyan, },
 
       ['@constant'] = { fg = colors.purple, },
       ['@constant.builtin'] = { fg = colors.purple, },
-      ['@symbol'] = { fg = colors.purple, },
+      ['@markup.link.label.symbol'] = { fg = colors.purple, },
 
       ['@constant.macro'] = { fg = colors.cyan, },
-      ['@string.regex'] = { fg = colors.red, },
+      ['@string.regexp'] = { fg = colors.red, },
       ['@string'] = { fg = colors.yellow, },
       ['@string.escape'] = { fg = colors.cyan, },
       ['@character'] = { fg = colors.green, },
       ['@number'] = { fg = colors.purple, },
       ['@boolean'] = { fg = colors.purple, },
-      ['@float'] = { fg = colors.green, },
+      ['@number.float'] = { fg = colors.green, },
       ['@annotation'] = { fg = colors.yellow, },
       ['@attribute'] = { fg = colors.cyan, },
-      ['@namespace'] = { fg = colors.orange, },
+      ['@module'] = { fg = colors.orange, },
 
       ['@function.builtin'] = { fg = colors.cyan, },
       ['@function'] = { fg = colors.green, },
       ['@function.macro'] = { fg = colors.green, },
-      ['@parameter'] = { fg = colors.orange, },
-      ['@parameter.reference'] = { fg = colors.orange, },
-      ['@method'] = { fg = colors.green, },
-      ['@field'] = { fg = colors.orange, },
+      ['@variable.parameter'] = { fg = colors.orange, },
+      ['@variable.parameter.reference'] = { fg = colors.orange, },
+      ['@function.method'] = { fg = colors.green, },
+      ['@variable.member'] = { fg = colors.orange, },
       ['@property'] = { fg = colors.purple, },
       ['@constructor'] = { fg = colors.cyan, },
 
-      ['@conditional'] = { fg = colors.pink, },
-      ['@repeat'] = { fg = colors.pink, },
+      ['@keyword.conditional'] = { fg = colors.pink, },
+      ['@keyword.repeat'] = { fg = colors.pink, },
       ['@label'] = { fg = colors.cyan, },
 
       ['@keyword'] = { fg = colors.pink, },
@@ -169,24 +169,24 @@ local function setup(configs)
       ['@keyword.function.ruby'] = { fg = colors.pink, },
       ['@keyword.operator'] = { fg = colors.pink, },
       ['@operator'] = { fg = colors.pink, },
-      ['@exception'] = { fg = colors.purple, },
+      ['@keyword.exception'] = { fg = colors.purple, },
       ['@type'] = { fg = colors.bright_cyan, },
       ['@type.builtin'] = { fg = colors.cyan, italic = true, },
       ['@type.qualifier'] = { fg = colors.pink, },
       ['@structure'] = { fg = colors.purple, },
-      ['@include'] = { fg = colors.pink, },
+      ['@keyword.include'] = { fg = colors.pink, },
 
       ['@variable'] = { fg = colors.fg, },
       ['@variable.builtin'] = { fg = colors.purple, },
 
-      ['@text'] = { fg = colors.orange, },
-      ['@text.strong'] = { fg = colors.orange, bold = true, },     -- bold
-      ['@text.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
-      ['@text.underline'] = { fg = colors.orange, },
-      ['@text.title'] = { fg = colors.pink, bold = true, },        -- title
-      ['@text.literal'] = { fg = colors.yellow, },                 -- inline code
-      ['@text.uri'] = { fg = colors.yellow, italic = true, },      -- urls
-      ['@text.reference'] = { fg = colors.orange, bold = true, },
+      ['@markup'] = { fg = colors.orange, },
+      ['@markup.strong'] = { fg = colors.orange, bold = true, },     -- bold
+      ['@markup.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
+      ['@markup.underline'] = { fg = colors.orange, },
+      ['@markup.heading'] = { fg = colors.pink, bold = true, },        -- title
+      ['@markup.raw'] = { fg = colors.yellow, },                 -- inline code
+      ['@markup.link.url'] = { fg = colors.yellow, italic = true, },      -- urls
+      ['@markup.link'] = { fg = colors.orange, bold = true, },
 
       ['@tag'] = { fg = colors.cyan, },
       ['@tag.attribute'] = { fg = colors.green, },
@@ -413,31 +413,31 @@ local function setup(configs)
       -- Cmp
       CmpItemAbbr = { fg = colors.white, bg = colors.bg },
       CmpItemKind = { fg = colors.white, bg = colors.bg },
-      CmpItemKindMethod = { link = "@method" },
-      CmpItemKindText = { link = "@text" },
+      CmpItemKindMethod = { link = "@function.method" },
+      CmpItemKindText = { link = "@markup" },
       CmpItemKindFunction = { link = "@function" },
       CmpItemKindConstructor = { link = "@type" },
       CmpItemKindVariable = { link = "@variable" },
       CmpItemKindClass = { link = "@type" },
       CmpItemKindInterface = { link = "@type" },
-      CmpItemKindModule = { link = "@namespace" },
+      CmpItemKindModule = { link = "@module" },
       CmpItemKindProperty = { link = "@property" },
       CmpItemKindOperator = { link = "@operator" },
-      CmpItemKindReference = { link = "@parameter.reference" },
-      CmpItemKindUnit = { link = "@field" },
-      CmpItemKindValue = { link = "@field" },
-      CmpItemKindField = { link = "@field" },
-      CmpItemKindEnum = { link = "@field" },
+      CmpItemKindReference = { link = "@variable.parameter.reference" },
+      CmpItemKindUnit = { link = "@variable.member" },
+      CmpItemKindValue = { link = "@variable.member" },
+      CmpItemKindField = { link = "@variable.member" },
+      CmpItemKindEnum = { link = "@variable.member" },
       CmpItemKindKeyword = { link = "@keyword" },
-      CmpItemKindSnippet = { link = "@text" },
+      CmpItemKindSnippet = { link = "@markup" },
       CmpItemKindColor = { link = "DevIconCss" },
       CmpItemKindFile = { link = "TSURI" },
       CmpItemKindFolder = { link = "TSURI" },
       CmpItemKindEvent = { link = "@constant" },
-      CmpItemKindEnumMember = { link = "@field" },
+      CmpItemKindEnumMember = { link = "@variable.member" },
       CmpItemKindConstant = { link = "@constant" },
       CmpItemKindStruct = { link = "@structure" },
-      CmpItemKindTypeParameter = { link = "@parameter" },
+      CmpItemKindTypeParameter = { link = "@variable.parameter" },
 
       -- navic
       NavicIconsFile = { link = "CmpItemKindFile" },
