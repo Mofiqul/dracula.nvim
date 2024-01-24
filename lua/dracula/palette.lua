@@ -1,9 +1,9 @@
 ---@class Palette
 return {
-   bg = "#282A36",
+   bg = "#000000",
    --bg = "#13141a",
    fg = "#F8F8F2",
-   selection = "#44475A",
+   selection = "#101010",
    comment = "#6272A4",
    red = "#FF5555",
    orange = "#FFB86C",
@@ -19,11 +19,11 @@ return {
    bright_magenta = "#FF92DF",
    bright_cyan = "#A4FFFF",
    bright_white = "#FFFFFF",
-   menu ="#282A36" ,--"#21222C",
+   menu ="#000000" ,--"#21222C",
    --menu = "#13141a",
    visual = "#3E4452",
    gutter_fg = "#4B5263",
    nontext = "#3B4048",
    white = "#ABB2BF",
-   black = "#191A21",
+   black = "#000000",
 }
