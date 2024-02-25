@@ -142,6 +142,7 @@ local function setup(configs)
       ['@string.regexp'] = { fg = colors.red, },
       ['@string'] = { fg = colors.yellow, },
       ['@string.escape'] = { fg = colors.cyan, },
+      ['@string.special.symbol'] = { fg = colors.purple, },
       ['@character'] = { fg = colors.green, },
       ['@number'] = { fg = colors.purple, },
       ['@boolean'] = { fg = colors.purple, },
