@@ -28,6 +28,8 @@ NOTICE: if you use an older version of neovim (>=0.8.0 <0.9.2), you can pin this
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+- [mini.indentcope](https://github.com/echasnovski/mini.indentcope)
+- [mini.icons](https://github.com/echasnovski/mini.icons)
 
 ## ⬇️ Installation
 
@@ -74,7 +76,7 @@ require('lualine').setup {
 ```
 
 If you are using [LazyVim](https://github.com/LazyVim/LazyVim), you can add this to your plugins/colorscheme.lua file:
-```
+```lua
 return {
   -- add dracula
   { "Mofiqul/dracula.nvim" },

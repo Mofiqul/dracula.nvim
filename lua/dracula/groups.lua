@@ -493,6 +493,16 @@ local function setup(configs)
       MiniIndentscopeSymbol = { fg = "#B5629B" },
       MiniIndentscopeSymbolOff = { fg = "#B5629B" },
 
+      -- mini.icons
+      MiniIconsAzure = { fg = colors.bright_cyan },
+      MiniIconsBlue = { fg = colors.bright_blue },
+      MiniIconsCyan = { fg = colors.cyan },
+      MiniIconsGrey = { fg = colors.white },
+      MiniIconsOrange = { fg = colors.orange },
+      MiniIconsPurple = { fg = colors.purple },
+      MiniIconsRed = { fg = colors.red },
+      MiniIconsYellow = { fg = colors.yellow },
+
 
       -- goolord/alpha-nvim
       AlphaHeader = { fg = colors.purple },
