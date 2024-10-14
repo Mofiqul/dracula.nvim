@@ -177,7 +177,7 @@ local function setup(configs)
       ['@structure'] = { fg = colors.purple, },
       ['@keyword.include'] = { fg = colors.pink, },
 
-      ['@variable'] = { fg = colors.fg, },
+      ['@variable'] = { fg = colors.bright_green, },
       ['@variable.builtin'] = { fg = colors.purple, },
 
       ['@markup'] = { fg = colors.orange, },
@@ -219,7 +219,7 @@ local function setup(configs)
       ['@lsp.type.property'] = { fg = colors.purple, },
       ['@lsp.type.struct'] = { fg = colors.cyan },
       ['@lsp.type.type'] = { fg = colors.bright_cyan, },
-      ['@lsp.type.variable'] = { fg = colors.fg, },
+      ['@lsp.type.variable'] = { fg = colors.bright_green, },
 
       -- HTML
       htmlArg = { fg = colors.green, },
