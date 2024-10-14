@@ -1,31 +1,33 @@
 ---@class Highlight
----@field fg string color name or "#RRGGBB"
----@field foreground string same fg, color name or "#RRGGBB"
----@field bg string color name or "#RRGGBB"
----@field background string same bg, color name or "#RRGGBB"
----@field sp string color name or "#RRGGBB"
----@field special string same sg, color name or "#RRGGBB"
----@field blend integer value between 0 and 100
----@field bold boolean
----@field standout boolean
----@field underline boolean
----@field undercurl boolean
----@field underdouble boolean
----@field underdotted boolean
----@field underdashed boolean
----@field strikethrough boolean
----@field italic boolean
----@field reverse boolean
----@field nocombine boolean
----@field link string name of another highlight group to link to, see |:hi-link|.
----@field default string Don't override existing definition |:hi-default|
----@field ctermfg integer Sets foreground of cterm color |highlight-ctermfg|
----@field ctermbg integer Sets background of cterm color |highlight-ctermbg|
----@field cterm table cterm attribute map, like |highlight-args|.
+---@variable.member fg string color name or "#RRGGBB"
+---@variable.member foreground string same fg, color name or "#RRGGBB"
+---@variable.member bg string color name or "#RRGGBB"
+---@variable.member background string same bg, color name or "#RRGGBB"
+---@variable.member sp string color name or "#RRGGBB"
+---@variable.member special string same sg, color name or "#RRGGBB"
+---@variable.member blend integer value between 0 and 100
+---@variable.member bold boolean
+---@variable.member standout boolean
+---@variable.member underline boolean
+---@variable.member undercurl boolean
+---@variable.member underdouble boolean
+---@variable.member underdotted boolean
+---@variable.member underdashed boolean
+---@variable.member strikethrough boolean
+---@variable.member italic boolean
+---@variable.member reverse boolean
+---@variable.member nocombine boolean
+---@variable.member link string name of another highlight group to link to, see |:hi-link|.
+---@variable.member default string Don't override existing definition |:hi-default|
+---@variable.member ctermfg integer Sets foreground of cterm color |highlight-ctermfg|
+---@variable.member ctermbg integer Sets background of cterm color |highlight-ctermbg|
+---@variable.member cterm table cterm attribute map, like |highlight-args|.
+
+---@alias HighlightGroups table<string, Highlight>
 
 ---setup highlight groups
----@param configs DefaultConfig
----@return table<string, Highlight>
+---@param configs DraculaConfig
+---@return HighlightGroups
 ---@nodiscard
 local function setup(configs)
    local colors = configs.colors
@@ -93,6 +95,7 @@ local function setup(configs)
 
       ErrorMsg = { fg = colors.bright_red, },
       VertSplit = { fg = colors.black, },
+      WinSeparator = { fg = colors.black, },
       Folded = { fg = colors.comment, },
       FoldColumn = {},
       Search = { fg = colors.black, bg = colors.orange, },
@@ -129,66 +132,68 @@ local function setup(configs)
       ['@error'] = { fg = colors.bright_red, },
       ['@punctuation.delimiter'] = { fg = colors.fg, },
       ['@punctuation.bracket'] = { fg = colors.fg, },
-      ['@punctuation.special'] = { fg = colors.cyan, },
+      ['@markup.list'] = { fg = colors.cyan, },
 
       ['@constant'] = { fg = colors.purple, },
       ['@constant.builtin'] = { fg = colors.purple, },
-      ['@symbol'] = { fg = colors.purple, },
+      ['@markup.link.label.symbol'] = { fg = colors.purple, },
 
       ['@constant.macro'] = { fg = colors.cyan, },
-      ['@string.regex'] = { fg = colors.red, },
+      ['@string.regexp'] = { fg = colors.red, },
       ['@string'] = { fg = colors.yellow, },
       ['@string.escape'] = { fg = colors.cyan, },
+      ['@string.special.symbol'] = { fg = colors.purple, },
       ['@character'] = { fg = colors.green, },
       ['@number'] = { fg = colors.purple, },
       ['@boolean'] = { fg = colors.purple, },
-      ['@float'] = { fg = colors.green, },
+      ['@number.float'] = { fg = colors.green, },
       ['@annotation'] = { fg = colors.yellow, },
       ['@attribute'] = { fg = colors.cyan, },
-      ['@namespace'] = { fg = colors.orange, },
+      ['@module'] = { fg = colors.orange, },
 
       ['@function.builtin'] = { fg = colors.cyan, },
       ['@function'] = { fg = colors.green, },
       ['@function.macro'] = { fg = colors.green, },
-      ['@parameter'] = { fg = colors.orange, },
-      ['@parameter.reference'] = { fg = colors.orange, },
-      ['@method'] = { fg = colors.green, },
-      ['@field'] = { fg = colors.orange, },
+      ['@variable.parameter'] = { fg = colors.orange, },
+      ['@variable.parameter.reference'] = { fg = colors.orange, },
+      ['@function.method'] = { fg = colors.green, },
+      ['@variable.member'] = { fg = colors.orange, },
       ['@property'] = { fg = colors.purple, },
       ['@constructor'] = { fg = colors.cyan, },
 
-      ['@conditional'] = { fg = colors.pink, },
-      ['@repeat'] = { fg = colors.pink, },
+      ['@keyword.conditional'] = { fg = colors.pink, },
+      ['@keyword.repeat'] = { fg = colors.pink, },
       ['@label'] = { fg = colors.cyan, },
 
       ['@keyword'] = { fg = colors.pink, },
       ['@keyword.function'] = { fg = colors.cyan, },
+      ['@keyword.function.ruby'] = { fg = colors.pink, },
       ['@keyword.operator'] = { fg = colors.pink, },
       ['@operator'] = { fg = colors.pink, },
-      ['@exception'] = { fg = colors.purple, },
+      ['@keyword.exception'] = { fg = colors.purple, },
       ['@type'] = { fg = colors.bright_cyan, },
       ['@type.builtin'] = { fg = colors.cyan, italic = true, },
       ['@type.qualifier'] = { fg = colors.pink, },
       ['@structure'] = { fg = colors.purple, },
-      ['@include'] = { fg = colors.pink, },
+      ['@keyword.include'] = { fg = colors.pink, },
 
       ['@variable'] = { fg = colors.fg, },
       ['@variable.builtin'] = { fg = colors.purple, },
 
-      ['@text'] = { fg = colors.orange, },
-      ['@text.strong'] = { fg = colors.orange, bold = true, }, -- bold
-      ['@text.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
-      ['@text.underline'] = { fg = colors.orange, },
-      ['@text.title'] = { fg = colors.pink, bold = true, }, -- title
-      ['@text.literal'] = { fg = colors.yellow, }, -- inline code
-      ['@text.uri'] = { fg = colors.yellow, italic = true, }, -- urls
-      ['@text.reference'] = { fg = colors.orange, bold = true, },
+      ['@markup'] = { fg = colors.orange, },
+      ['@markup.strong'] = { fg = colors.orange, bold = true, },     -- bold
+      ['@markup.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
+      ['@markup.underline'] = { fg = colors.orange, },
+      ['@markup.heading'] = { fg = colors.pink, bold = true, },        -- title
+      ['@markup.raw'] = { fg = colors.yellow, },                 -- inline code
+      ['@markup.link.url'] = { fg = colors.yellow, italic = true, },      -- urls
+      ['@markup.link'] = { fg = colors.orange, bold = true, },
 
       ['@tag'] = { fg = colors.cyan, },
       ['@tag.attribute'] = { fg = colors.green, },
       ['@tag.delimiter'] = { fg = colors.cyan, },
 
-        -- Semantic 
+      -- Semantic
       ['@class'] = { fg = colors.cyan },
       ['@struct'] = { fg = colors.cyan },
       ['@enum'] = { fg = colors.cyan },
@@ -200,7 +205,7 @@ local function setup(configs)
       ['@typeParameter'] = { fg = colors.cyan },
       ['@decorator'] = { fg = colors.cyan },
 
-        -- LSP Semantic (0.9+)
+      -- LSP Semantic (0.9+)
       ['@lsp.type.class'] = { fg = colors.cyan },
       ['@lsp.type.enum'] = { fg = colors.cyan },
       ['@lsp.type.decorator'] = { fg = colors.green },
@@ -267,7 +272,7 @@ local function setup(configs)
       diffNewFile = { fg = colors.green, },
       diffOldFile = { fg = colors.red, },
 
-      debugPc = { bg = colors.cyan, },
+      debugPc = { bg = colors.menu, },
       debugBreakpoint = { fg = colors.red, reverse = true, },
 
       -- Git Signs
@@ -288,6 +293,12 @@ local function setup(configs)
       TelescopeNormal = { fg = colors.fg, bg = colors.bg, },
       TelescopeMatching = { fg = colors.green, },
       TelescopePromptPrefix = { fg = colors.purple, },
+      TelescopeResultsDiffDelete = { fg = colors.red },
+      TelescopeResultsDiffChange = { fg = colors.cyan },
+      TelescopeResultsDiffAdd = { fg = colors.green },
+
+      -- Flash
+      FlashLabel =  { bg = colors.red, fg = colors.bright_white },
 
       -- NvimTree
       NvimTreeNormal = { fg = colors.fg, bg = colors.menu, },
@@ -322,6 +333,7 @@ local function setup(configs)
       BufferLineIndicatorSelected = { fg = colors.purple, },
       BufferLineFill = { bg = colors.black, },
       BufferLineBufferSelected = { bg = colors.bg, },
+      BufferLineSeparator = { fg = colors.black },
 
       -- LSP
       DiagnosticError = { fg = colors.red, },
@@ -357,6 +369,7 @@ local function setup(configs)
       LspReferenceRead = { fg = colors.orange, },
       LspReferenceWrite = { fg = colors.orange, },
       LspCodeLens = { fg = colors.cyan, },
+      LspInlayHint = { fg = "#969696", bg = "#2f3146" },
 
       --LSP Saga
       LspFloatWinNormal = { fg = colors.fg, },
@@ -373,13 +386,14 @@ local function setup(configs)
       LspSagaShTruncateLine = { fg = colors.comment, },
       LspSagaDocTruncateLine = { fg = colors.comment, },
       LspSagaLspFinderBorder = { fg = colors.comment, },
+      CodeActionNumber = { bg = 'NONE', fg = colors.cyan },
 
       -- IndentBlankLine
       IndentBlanklineContextChar = { fg = colors.bright_red, nocombine = true, },
 
       -- Nvim compe
-      CmpItemAbbrDeprecated = { fg = colors.white, bg = colors.menu, },
-      CmpItemAbbrMatch = { fg = colors.cyan, bg = colors.menu, },
+      CmpItemAbbrDeprecated = { fg = colors.white, bg = colors.bg, },
+      CmpItemAbbrMatch = { fg = colors.cyan, bg = colors.bg, },
 
       -- barbar
       BufferVisibleTarget = { fg = colors.red },
@@ -398,33 +412,33 @@ local function setup(configs)
       CompeDocumentationBorder = { link = "Pmenu" },
 
       -- Cmp
-      CmpItemKind = { link = "Pmenu" },
-      CmpItemAbbr = { link = "Pmenu" },
-      CmpItemKindMethod = { link = "@method" },
-      CmpItemKindText = { link = "@text" },
+      CmpItemAbbr = { fg = colors.white, bg = colors.bg },
+      CmpItemKind = { fg = colors.white, bg = colors.bg },
+      CmpItemKindMethod = { link = "@function.method" },
+      CmpItemKindText = { link = "@markup" },
       CmpItemKindFunction = { link = "@function" },
       CmpItemKindConstructor = { link = "@type" },
       CmpItemKindVariable = { link = "@variable" },
       CmpItemKindClass = { link = "@type" },
       CmpItemKindInterface = { link = "@type" },
-      CmpItemKindModule = { link = "@namespace" },
+      CmpItemKindModule = { link = "@module" },
       CmpItemKindProperty = { link = "@property" },
       CmpItemKindOperator = { link = "@operator" },
-      CmpItemKindReference = { link = "@parameter.reference" },
-      CmpItemKindUnit = { link = "@field" },
-      CmpItemKindValue = { link = "@field" },
-      CmpItemKindField = { link = "@field" },
-      CmpItemKindEnum = { link = "@field" },
+      CmpItemKindReference = { link = "@variable.parameter.reference" },
+      CmpItemKindUnit = { link = "@variable.member" },
+      CmpItemKindValue = { link = "@variable.member" },
+      CmpItemKindField = { link = "@variable.member" },
+      CmpItemKindEnum = { link = "@variable.member" },
       CmpItemKindKeyword = { link = "@keyword" },
-      CmpItemKindSnippet = { link = "@text" },
+      CmpItemKindSnippet = { link = "@markup" },
       CmpItemKindColor = { link = "DevIconCss" },
       CmpItemKindFile = { link = "TSURI" },
       CmpItemKindFolder = { link = "TSURI" },
       CmpItemKindEvent = { link = "@constant" },
-      CmpItemKindEnumMember = { link = "@field" },
+      CmpItemKindEnumMember = { link = "@variable.member" },
       CmpItemKindConstant = { link = "@constant" },
       CmpItemKindStruct = { link = "@structure" },
-      CmpItemKindTypeParameter = { link = "@parameter" },
+      CmpItemKindTypeParameter = { link = "@variable.parameter" },
 
       -- navic
       NavicIconsFile = { link = "CmpItemKindFile" },
@@ -457,19 +471,93 @@ local function setup(configs)
       NavicText = { fg = 'gray' },
       NavicSeparator = { fg = 'gray' },
 
-
       -- TS rainbow colors
-      rainbowcol1 = { fg = colors.red, },
-      rainbowcol2 = { fg = colors.green, },
-      rainbowcol3 = { fg = colors.yellow, },
-      rainbowcol4 = { fg = colors.purple, },
-      rainbowcol5 = { fg = colors.pink, },
-      rainbowcol6 = { fg = colors.cyan, },
-      rainbowcol7 = { fg = colors.white, },
+      rainbowcol1 = { fg = colors.fg },
+      rainbowcol2 = { fg = colors.pink },
+      rainbowcol3 = { fg = colors.cyan },
+      rainbowcol4 = { fg = colors.green },
+      rainbowcol5 = { fg = colors.purple },
+      rainbowcol6 = { fg = colors.orange },
+      rainbowcol7 = { fg = colors.fg },
+
+      -- Rainbow delimiter
+      RainbowDelimiterRed = { fg = colors.fg },
+      RainbowDelimiterYellow = {fg = colors.pink },
+      RainbowDelimiterBlue = {fg = colors.cyan },
+      RainbowDelimiterOrange = { fg = colors.green },
+      RainbowDelimiterGreen = { fg = colors.purple },
+      RainbowDelimiterViolet = { fg = colors.orange },
+      RainbowDelimiterCyan = { fg = colors.fg },
+
+      -- mini.indentscope
+      MiniIndentscopeSymbol = { fg = "#B5629B" },
+      MiniIndentscopeSymbolOff = { fg = "#B5629B" },
+
+      -- mini.icons
+      MiniIconsAzure = { fg = colors.bright_cyan },
+      MiniIconsBlue = { fg = colors.bright_blue },
+      MiniIconsCyan = { fg = colors.cyan },
+      MiniIconsGrey = { fg = colors.white },
+      MiniIconsOrange = { fg = colors.orange },
+      MiniIconsPurple = { fg = colors.purple },
+      MiniIconsRed = { fg = colors.red },
+      MiniIconsYellow = { fg = colors.yellow },
+
+
+      -- goolord/alpha-nvim
+      AlphaHeader = { fg = colors.purple },
+      AlphaButtons = { fg = colors.cyan },
+      AlphaShortcut = { fg = colors.orange },
+      AlphaFooter = { fg = colors.purple, italic = true },
+
+      -- nvimdev/dashboard-nvim
+      DashboardShortCut = { fg = colors.cyan },
+      DashboardHeader = { fg = colors.purple },
+      DashboardCenter = { fg = colors.fg },
+      DashboardFooter = { fg = colors.purple, italic = true },
+      DashboardKey = { fg = colors.orange },
+      DashboardDesc = { fg = colors.cyan },
+      DashboardIcon = { fg = colors.cyan, bold = true },
+
+      -- dap UI
+      DapUIPlayPause = { fg = colors.bright_green },
+      DapUIRestart = { fg = colors.green },
+      DapUIStop = { fg = colors.red },
+      DapUIStepOver = { fg = colors.cyan },
+      DapUIStepInto = { fg = colors.cyan },
+      DapUIStepOut = { fg = colors.cyan },
+      DapUIStepBack = { fg = colors.cyan },
+      DapUIType = { fg = colors.bright_blue },
+      DapUIScope = { fg = colors.bright_cyan },
+      DapUIModifiedValue = { fg = colors.bright_cyan, bold = true },
+      DapUIDecoration = { fg = colors.bright_cyan },
+      DapUIThread = { fg = colors.bright_green },
+      DapUIStoppedThread = { fg = colors.bright_cyan },
+      DapUISource = { fg = colors.bright_blue },
+      DapUILineNumber = { fg = colors.bright_cyan },
+      DapUIFloatBorder = { fg = colors.bright_cyan },
+      DapUIWatchesEmpty = { fg = colors.pink },
+      DapUIWatchesValue = { fg = colors.bright_green },
+      DapUIWatchesError = { fg = colors.pink },
+      DapUIBreakpointsPath = { fg = colors.bright_cyan },
+      DapUIBreakpointsInfo = { fg = colors.bright_green },
+      DapUIBreakpointsCurrentLine = { fg = colors.bright_green, bold = true },
+      DapStoppedLine = { default = true, link = 'Visual' },
+      DapUIWinSelect = { fg = colors.bright_cyan, bold = true },
+
+      -- Notify
+      NotifyInfoIcon = { fg = colors.green },
+      NotifyInfoTitle = { fg = colors.green },
+      NotifyInfoBorder = { fg = "#2C453F" },
+      NotifyErrorIcon = { fg = colors.red },
+      NotifyErrorTitle = { fg = colors.red },
+      NotifyErrorBorder = { fg = "#DD6E6B" },
+      NotifyWarnIcon = { fg = colors.orange },
+      NotifyWarnTitle = { fg = colors.orange },
+      NotifyWarnBorder = { fg = "#785637" },
    }
 end
 
 return {
    setup = setup,
 }
-
