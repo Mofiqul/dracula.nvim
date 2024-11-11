@@ -1,4 +1,28 @@
 ---@class Palette
+---@field bg string
+---@field fg string
+---@field selection string
+---@field comment string
+---@field red string
+---@field orange string
+---@field yellow string
+---@field green string
+---@field purple string
+---@field cyan string
+---@field pink string
+---@field bright_red string
+---@field bright_green string
+---@field bright_yellow string
+---@field bright_blue string
+---@field bright_magenta string
+---@field bright_cyan string
+---@field bright_white string
+---@field menu string
+---@field visual string
+---@field gutter_fg string
+---@field nontext string
+---@field white string
+---@field black string
 return {
    bg = "#282A36",
    fg = "#F8F8F2",
