@@ -31,6 +31,8 @@
 ---@nodiscard
 local function setup(configs)
    local colors = configs.colors
+   assert(colors ~= nil, "Must pass colors")
+
    local endOfBuffer = {
       fg = configs.show_end_of_buffer and colors.visual or colors.bg,
    }
@@ -445,6 +447,35 @@ local function setup(configs)
       CmpItemKindConstant = { link = "@constant" },
       CmpItemKindStruct = { link = "@structure" },
       CmpItemKindTypeParameter = { link = "@variable.parameter" },
+
+      -- Blink
+      BlinkCmpLabel = { fg = colors.white, bg = colors.bg },
+      BlinkCmpLabelDeprecated = { fg = colors.white, bg = colors.bg },
+      BlinkCmpLabelMatch = { fg = colors.cyan, bg = colors.bg },
+      BlinkCmpKind = { fg = colors.white, bg = colors.bg },
+      BlinkCmpKindFunction = { link = "@function" },
+      BlinkCmpKindConstructor = { link = "@type" },
+      BlinkCmpKindVariable = { link = "@variable" },
+      BlinkCmpKindClass = { link = "@type" },
+      BlinkCmpKindInterface = { link = "@type" },
+      BlinkCmpKindModule = { link = "@module" },
+      BlinkCmpKindProperty = { link = "@property" },
+      BlinkCmpKindOperator = { link = "@operator" },
+      BlinkCmpKindReference = { link = "@variable.parameter.reference" },
+      BlinkCmpKindUnit = { link = "@variable.member" },
+      BlinkCmpKindValue = { link = "@variable.member" },
+      BlinkCmpKindField = { link = "@variable.member" },
+      BlinkCmpKindEnum = { link = "@variable.member" },
+      BlinkCmpKindKeyword = { link = "@keyword" },
+      BlinkCmpKindSnippet = { link = "@markup" },
+      BlinkCmpKindColor = { link = "DevIconCss" },
+      BlinkCmpKindFile = { link = "TSURI" },
+      BlinkCmpKindFolder = { link = "TSURI" },
+      BlinkCmpKindEvent = { link = "@constant" },
+      BlinkCmpKindEnumMember = { link = "@variable.member" },
+      BlinkCmpKindConstant = { link = "@constant" },
+      BlinkCmpKindStruct = { link = "@structure" },
+      BlinkCmpKindTypeParameter = { link = "@variable.parameter" },
 
       -- navic
       NavicIconsFile = { link = "CmpItemKindFile" },
