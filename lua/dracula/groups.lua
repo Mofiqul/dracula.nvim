@@ -509,6 +509,16 @@ local function setup(configs)
       MiniIconsRed = { fg = colors.red },
       MiniIconsYellow = { fg = colors.yellow },
 
+      -- mini.statusline
+      MiniStatuslineModeNormal = { fg = colors.black, bg = colors.purple, bold = true },
+      MiniStatuslineModeInsert = { fg = colors.black, bg = colors.green, bold = true },
+      MiniStatuslineModeVisual = { fg = colors.black, bg = colors.pink, bold = true },
+      MiniStatuslineModeReplace = { fg = colors.black, bg = colors.yellow, bold = true },
+      MiniStatuslineModeCommand = { fg = colors.black, bg = colors.cyan, bold = true },
+      MiniStatuslineInactive = { fg = colors.fg, bg = colors.visual, bold = true },
+      MiniStatuslineDevinfo = { fg = colors.purple, bg = colors.black },
+      MiniStatuslineFilename = { fg = colors.white, bg = colors.black },
+      MiniStatuslineFileinfo = { fg = colors.purple, bg = colors.black },
 
       -- goolord/alpha-nvim
       AlphaHeader = { fg = colors.purple },
