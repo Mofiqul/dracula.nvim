@@ -18,6 +18,7 @@ NOTICE: if you use an older version of neovim (>=0.8.0 <0.9.2), you can pin this
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-compe](https://github.com/hrsh7th/nvim-compe)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [blink.cmp](https://github.com/Saghen/blink.cmp/)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [NeoTree](https://github.com/nvim-neo-tree/neo-tree.nvim)
