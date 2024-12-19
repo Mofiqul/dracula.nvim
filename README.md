@@ -30,6 +30,7 @@ NOTICE: if you use an older version of neovim (>=0.8.0 <0.9.2), you can pin this
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [mini.indentcope](https://github.com/echasnovski/mini.indentcope)
 - [mini.icons](https://github.com/echasnovski/mini.icons)
+- [mini.statusline](https://github.com/echasnovski/mini.statusline)
 
 ## ⬇️ Installation
 
