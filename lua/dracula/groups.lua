@@ -340,7 +340,7 @@ local function setup(configs)
       -- Bufferline
       BufferLineIndicatorSelected = { fg = colors.purple },
       BufferLineFill = { bg = "NONE" },
-      BufferLineBufferSelected = { bg = colors.bg },
+      BufferLineBufferSelected = { bg = "NONE" },
       BufferLineSeparator = { fg = colors.black },
 
       -- LSP
