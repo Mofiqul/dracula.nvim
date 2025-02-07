@@ -339,7 +339,7 @@ local function setup(configs)
 
       -- Bufferline
       BufferLineIndicatorSelected = { fg = colors.purple },
-      BufferLineFill = { bg = colors.bg },
+      BufferLineFill = { bg = "NONE" },
       BufferLineBufferSelected = { bg = colors.bg },
       BufferLineSeparator = { fg = colors.black },
 
