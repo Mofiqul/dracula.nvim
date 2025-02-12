@@ -36,7 +36,6 @@ local insert = {
    b = { fg = colors.green, bg = bg },
    c = { fg = colors.white, bg = bg },
 }
-
 return {
    normal = normal,
    command = command,
