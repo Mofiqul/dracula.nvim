@@ -31,6 +31,8 @@
 ---@nodiscard
 local function setup(configs)
    local colors = configs.colors
+   assert(colors ~= nil, "Must pass colors")
+
    local endOfBuffer = {
       fg = configs.show_end_of_buffer and colors.visual or colors.bg,
    }
@@ -246,12 +248,12 @@ local function setup(configs)
       markdownCode = { fg = colors.green },
       markdownCodeBlock = { fg = colors.orange },
       markdownCodeDelimiter = { fg = colors.red },
-      markdownH1 = { fg = colors.pink, bold = true },
-      markdownH2 = { fg = colors.pink, bold = true },
-      markdownH3 = { fg = colors.pink, bold = true },
-      markdownH4 = { fg = colors.pink, bold = true },
-      markdownH5 = { fg = colors.pink, bold = true },
-      markdownH6 = { fg = colors.pink, bold = true },
+      markdownH2 = { link = "rainbow2" },
+      markdownH1 = { link = "rainbow1" },
+      markdownH3 = { link = "rainbow3" },
+      markdownH4 = { link = "rainbow4" },
+      markdownH5 = { link = "rainbow5" },
+      markdownH6 = { link = "rainbow6" },
       markdownHeadingDelimiter = { fg = colors.red },
       markdownHeadingRule = { fg = colors.comment },
       markdownId = { fg = colors.purple },
@@ -263,6 +265,12 @@ local function setup(configs)
       markdownListMarker = { fg = colors.cyan },
       markdownOrderedListMarker = { fg = colors.red },
       markdownRule = { fg = colors.comment },
+      ["@markup.heading.1.markdown"] = { link = "rainbowcol1" },
+      ["@markup.heading.2.markdown"] = { link = "rainbowcol2" },
+      ["@markup.heading.3.markdown"] = { link = "rainbowcol3" },
+      ["@markup.heading.4.markdown"] = { link = "rainbowcol4" },
+      ["@markup.heading.5.markdown"] = { link = "rainbowcol5" },
+      ["@markup.heading.6.markdown"] = { link = "rainbowcol6" },
 
       --  Diff
       diffAdded = { fg = colors.green },
@@ -440,6 +448,35 @@ local function setup(configs)
       CmpItemKindConstant = { link = "@constant" },
       CmpItemKindStruct = { link = "@structure" },
       CmpItemKindTypeParameter = { link = "@variable.parameter" },
+
+      -- Blink
+      BlinkCmpLabel = { fg = colors.white, bg = colors.bg },
+      BlinkCmpLabelDeprecated = { fg = colors.white, bg = colors.bg },
+      BlinkCmpLabelMatch = { fg = colors.cyan, bg = colors.bg },
+      BlinkCmpKind = { fg = colors.white, bg = colors.bg },
+      BlinkCmpKindFunction = { link = "@function" },
+      BlinkCmpKindConstructor = { link = "@type" },
+      BlinkCmpKindVariable = { link = "@variable" },
+      BlinkCmpKindClass = { link = "@type" },
+      BlinkCmpKindInterface = { link = "@type" },
+      BlinkCmpKindModule = { link = "@module" },
+      BlinkCmpKindProperty = { link = "@property" },
+      BlinkCmpKindOperator = { link = "@operator" },
+      BlinkCmpKindReference = { link = "@variable.parameter.reference" },
+      BlinkCmpKindUnit = { link = "@variable.member" },
+      BlinkCmpKindValue = { link = "@variable.member" },
+      BlinkCmpKindField = { link = "@variable.member" },
+      BlinkCmpKindEnum = { link = "@variable.member" },
+      BlinkCmpKindKeyword = { link = "@keyword" },
+      BlinkCmpKindSnippet = { link = "@markup" },
+      BlinkCmpKindColor = { link = "DevIconCss" },
+      BlinkCmpKindFile = { link = "TSURI" },
+      BlinkCmpKindFolder = { link = "TSURI" },
+      BlinkCmpKindEvent = { link = "@constant" },
+      BlinkCmpKindEnumMember = { link = "@variable.member" },
+      BlinkCmpKindConstant = { link = "@constant" },
+      BlinkCmpKindStruct = { link = "@structure" },
+      BlinkCmpKindTypeParameter = { link = "@variable.parameter" },
 
       -- navic
       NavicIconsFile = { link = "CmpItemKindFile" },

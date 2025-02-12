@@ -5,13 +5,13 @@ local nvim_set_hl = vim.api.nvim_set_hl
 local tbl_deep_extend = vim.tbl_deep_extend
 
 ---@class DraculaConfig
----@field italic_comment boolean
----@field transparent_bg boolean
----@field show_end_of_buffer boolean
----@field lualine_bg_color string?
----@field colors Palette
----@field theme string?
----@field overrides HighlightGroups | fun(colors: Palette): HighlightGroups
+---@field italic_comment? boolean
+---@field transparent_bg? boolean
+---@field show_end_of_buffer? boolean
+---@field lualine_bg_color? string?
+---@field colors? Palette
+---@field theme? string?
+---@field overrides? HighlightGroups | fun(colors: Palette): HighlightGroups
 local DEFAULT_CONFIG = {
    italic_comment = false,
    transparent_bg = false,
