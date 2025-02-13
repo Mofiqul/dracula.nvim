@@ -102,6 +102,7 @@ local function setup(configs)
       FoldColumn = {},
       Search = { fg = colors.black, bg = colors.orange, },
       IncSearch = { fg = colors.orange, bg = colors.comment, },
+      CurSearch = { fg = colors.orange, bg = colors.comment, },
       LineNr = { fg = colors.comment, },
       MatchParen = { fg = colors.fg, underline = true, },
       NonText = { fg = colors.nontext, },
@@ -160,7 +161,7 @@ local function setup(configs)
       ['@variable.parameter.reference'] = { fg = colors.orange, },
       ['@function.method'] = { fg = colors.green, },
       ['@variable.member'] = { fg = colors.orange, },
-      ['@property'] = { fg = colors.purple, },
+      ['@property'] = { fg = colors.fg, },
       ['@constructor'] = { fg = colors.cyan, },
 
       ['@keyword.conditional'] = { fg = colors.pink, },
@@ -311,7 +312,7 @@ local function setup(configs)
       -- NvimTree
       NvimTreeNormal = { fg = colors.fg, bg = colors.menu, },
       NvimTreeVertSplit = { fg = colors.bg, bg = colors.bg, },
-      NvimTreeRootFolder = { fg = colors.fg, bold = true, },
+      NvimTreeRootFolder = { fg = colors.yellow, bold = true, },
       NvimTreeGitDirty = { fg = colors.yellow, },
       NvimTreeGitNew = { fg = colors.bright_green, },
       NvimTreeImageFile = { fg = colors.pink, },
