@@ -552,8 +552,8 @@ local function setup(configs)
       MiniStatuslineFileinfo = { fg = colors.purple, bg = colors.black },
 
       -- mini.files
-      MiniFilesNormal = { fg = colors.fg, bg = colors.bg },
-      MiniFilesBorder = { fg = colors.purple, bg = colors.bg },
+      MiniFilesNormal = { fg = colors.fg, bg = colors.menu },
+      MiniFilesBorder = { fg = colors.purple, bg = colors.menu },
       MiniFilesBorderModified = { },
       MiniFilesCursorLine = { bg = colors.selection, },
       MiniFilesDirectory = { fg = colors.fg },
