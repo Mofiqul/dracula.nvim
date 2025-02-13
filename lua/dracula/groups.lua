@@ -551,6 +551,16 @@ local function setup(configs)
       MiniStatuslineFilename = { fg = colors.white, bg = colors.black },
       MiniStatuslineFileinfo = { fg = colors.purple, bg = colors.black },
 
+      -- mini.files
+      MiniFilesNormal = { fg = colors.fg, bg = colors.bg },
+      MiniFilesBorder = { fg = colors.purple, bg = colors.bg },
+      MiniFilesBorderModified = { },
+      MiniFilesCursorLine = { bg = colors.selection, },
+      MiniFilesDirectory = { fg = colors.fg },
+      MiniFilesFile = { fg = colors.fg },
+      MiniFilesTitle = { fg = colors.fg },
+      MiniFilesTitleFocused = { fg = colors.yellow },
+
       -- goolord/alpha-nvim
       AlphaHeader = { fg = colors.purple },
       AlphaButtons = { fg = colors.cyan },
