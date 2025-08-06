@@ -449,10 +449,12 @@ local function setup(configs)
       CmpItemKindTypeParameter = { link = "@variable.parameter" },
 
       -- Blink
-      BlinkCmpLabel = { fg = colors.white, bg = colors.bg },
-      BlinkCmpLabelDeprecated = { fg = colors.white, bg = colors.bg },
-      BlinkCmpLabelMatch = { fg = colors.cyan, bg = colors.bg },
-      BlinkCmpKind = { fg = colors.white, bg = colors.bg },
+      BlinkCmpLabel = { fg = colors.white, bg = colors.menu },
+      BlinkCmpLabelDeprecated = { fg = colors.white, bg = colors.menu },
+      BlinkCmpLabelMatch = { fg = colors.cyan, bg = colors.menu },
+      BlinkCmpKind = { fg = colors.white, bg = colors.menu },
+      BlinkCmpScrollBarThumb = { bg = colors.fg },
+      BlinkCmpScrollBarGutter = { bg = colors.menu },
       BlinkCmpKindFunction = { link = "@function" },
       BlinkCmpKindConstructor = { link = "@type" },
       BlinkCmpKindVariable = { link = "@variable" },
