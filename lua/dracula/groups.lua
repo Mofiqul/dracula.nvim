@@ -84,7 +84,7 @@ local function setup(configs)
       CursorLine = { bg = colors.selection, },
       ColorColumn = { bg = colors.selection, },
 
-      StatusLine = { fg = colors.white, bg = colors.black, },
+      StatusLine = { fg = colors.white, bg = colors.selection, },
       StatusLineNC = { fg = colors.comment, },
       StatusLineTerm = { fg = colors.white, bg = colors.black, },
       StatusLineTermNC = { fg = colors.comment, },
