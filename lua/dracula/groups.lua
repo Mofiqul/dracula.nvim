@@ -86,7 +86,7 @@ local function setup(configs)
 
       StatusLine = { fg = colors.white, bg = colors.selection, },
       StatusLineNC = { fg = colors.comment, },
-      StatusLineTerm = { fg = colors.white, bg = colors.black, },
+      StatusLineTerm = { fg = colors.white, bg = colors.selection, },
       StatusLineTermNC = { fg = colors.comment, },
 
       Directory = { fg = colors.cyan, },
@@ -638,6 +638,7 @@ local function setup(configs)
       SnacksPickerInputBorder = { link = "SnacksPickerBorder" },
       SnacksPickerMatch = { fg = colors.green, italic = true },
       SnacksPickerPathHidden = { fg = colors.comment },
+      SnacksPickerPathIgnored = { fg = colors.comment },
       SnacksPickerPrompt = { fg = colors.purple },
       SnacksPickerTitle = { fg = colors.cyan, bold = true },
    }
