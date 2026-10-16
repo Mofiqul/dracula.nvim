@@ -32,6 +32,7 @@ NOTICE: if you use an older version of neovim (>=0.8.0 <0.9.2), you can pin this
 - [mini.indentcope](https://github.com/echasnovski/mini.indentcope)
 - [mini.icons](https://github.com/echasnovski/mini.icons)
 - [mini.statusline](https://github.com/echasnovski/mini.statusline)
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 
 ## ⬇️ Installation
 

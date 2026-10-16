@@ -25,6 +25,21 @@
 
 ---@alias HighlightGroups table<string, Highlight>
 
+---mix a "#RRGGBB" color into another one
+---@param fg string
+---@param bg string
+---@param alpha number 0 keeps bg, 1 keeps fg
+---@return string
+local function blend(fg, bg, alpha)
+   local function channel(hex, i)
+      return tonumber(hex:sub(i, i + 1), 16)
+   end
+   local function mix(i)
+      return math.floor(channel(fg, i) * alpha + channel(bg, i) * (1 - alpha) + 0.5)
+   end
+   return string.format("#%02x%02x%02x", mix(2), mix(4), mix(6))
+end
+
 ---setup highlight groups
 ---@param configs DraculaConfig
 ---@return HighlightGroups
@@ -651,6 +666,22 @@ local function setup(configs)
       NeogitDiffAddCursor = { fg = colors.green, bg = colors.selection },
       NeogitDiffDeleteCursor = { fg = colors.red, bg = colors.selection },
       NeogitDiffContextCursor = { fg = colors.comment, bg = colors.selection },
+
+      -- render-markdown.nvim
+      -- Without these, heading backgrounds fall back to Diff* groups:
+      -- DiffAdd is solid green and the others have no background.
+      RenderMarkdownH1 = { fg = colors.fg, bold = true, },
+      RenderMarkdownH2 = { fg = colors.pink, bold = true, },
+      RenderMarkdownH3 = { fg = colors.cyan, bold = true, },
+      RenderMarkdownH4 = { fg = colors.green, bold = true, },
+      RenderMarkdownH5 = { fg = colors.purple, bold = true, },
+      RenderMarkdownH6 = { fg = colors.orange, bold = true, },
+      RenderMarkdownH1Bg = { fg = colors.fg, bg = blend(colors.fg, colors.bg, 0.15), bold = true, },
+      RenderMarkdownH2Bg = { fg = colors.pink, bg = blend(colors.pink, colors.bg, 0.15), bold = true, },
+      RenderMarkdownH3Bg = { fg = colors.cyan, bg = blend(colors.cyan, colors.bg, 0.15), bold = true, },
+      RenderMarkdownH4Bg = { fg = colors.green, bg = blend(colors.green, colors.bg, 0.15), bold = true, },
+      RenderMarkdownH5Bg = { fg = colors.purple, bg = blend(colors.purple, colors.bg, 0.15), bold = true, },
+      RenderMarkdownH6Bg = { fg = colors.orange, bg = blend(colors.orange, colors.bg, 0.15), bold = true, },
 
    }
 end
